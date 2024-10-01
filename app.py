@@ -24,26 +24,25 @@ def add_profile_image(image_path, width):
             height: {width}px;
             border-radius: 50%;
             object-fit: cover;
-            margin-top: 50px;
-            margin-right: 50px;
             border: 5px solid #FF4B4B;
         }}
         .profile-container {{
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            gap: 20px;
         }}
         .text-container {{
-            max-width: 400px;
-            margin-left: 20px;
+            max-width: 350px;
+            margin-left: 10px;
+            font-size: 16px;
         }}
         </style>
         <div class="profile-container">
             <img class="profile-img" src="data:image/png;base64,{base64_img}">
             <div class="text-container">
                 <h2 style="font-size:30px;">Aspiring AI Engineer</h2>
-                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px; font-size: 16px;">
+                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px;">
                     👋 Hi, I'm Yashwanth! I am currently pursuing my Master of Engineering Management at Pennsylvania State University Harrisburg.
                     I bring both motivation and commitment to make meaningful contributions in engineering and AI fields.
                 </p>
@@ -63,17 +62,23 @@ with st.sidebar:
 
 # Main Content
 if selected_page == "About Me":
-    st.header("")
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=150)
+    st.header("About Me")
+    add_profile_image("image.png", width=150)
 
-    # Social media links
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/Yashwanth)")
-    with col2:
-        st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Yashwanth)")
-    with col3:
-        st.markdown("[![Upwork](https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/~Yashwanth)")
+    # Social media links arranged compactly below the text
+    st.markdown("""
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://linkedin.com/in/Yashwanth" target="_blank">
+            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/Yashwanth" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        </a>
+        <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
+            <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
 elif selected_page == "Resume":
     st.header("Resume")
