@@ -51,6 +51,31 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
+# Custom CSS to lock the navigation bar
+st.markdown("""
+    <style>
+    /* Lock the sidebar to prevent it from scrolling */
+    [data-testid="stSidebar"] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;  /* Adjust width if necessary */
+        height: 100%;
+        background-color: #f8f9fa;  /* Optionally change background color */
+        z-index: 1;
+    }
+
+    /* Adjust the main content to give space for the sidebar */
+    .main-content {
+        margin-left: 260px;  /* Adjust this value according to sidebar width */
+    }
+
+    [data-testid="stAppViewContainer"] {
+        overflow: auto;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Sidebar Navigation
 with st.sidebar:
     selected_page = option_menu(
