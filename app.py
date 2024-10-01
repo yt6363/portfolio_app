@@ -63,7 +63,7 @@ with st.sidebar:
 # Main Content
 if selected_page == "About Me":
     st.header("About Me")
-    add_profile_image("image.png", width=150)
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=150)
 
     # Social media links arranged compactly below the text
     st.markdown("""
