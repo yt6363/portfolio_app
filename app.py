@@ -41,8 +41,8 @@ def add_profile_image(image_path, width):
         <div class="profile-container">
             <img class="profile-img" src="data:image/png;base64,{base64_img}">
             <div class="text-container">
-                <h2 style="font-size:30px;">Aspiring AI Engineer</h2>
-                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px;">
+                <h2 style="font-size:50px;">Aspiring AI Engineer</h2>
+                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px; font-size:20px;">
                     👋 Hi, I'm Yashwanth! I am currently pursuing my Master of Engineering Management at Pennsylvania State University Harrisburg.
                     I bring both motivation and commitment to make meaningful contributions in engineering and AI fields.
                 </p>
