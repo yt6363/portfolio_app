@@ -24,25 +24,26 @@ def add_profile_image(image_path, width):
             height: {width}px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #FF4B4B;
+            border: 6px solid #FF4B4B;
         }}
         .profile-container {{
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
+            margin-top: 50px;
         }}
         .text-container {{
-            max-width: 350px;
+            max-width: 450px;
             margin-left: 10px;
-            font-size: 16px;
+            font-size: 18px;
         }}
         </style>
         <div class="profile-container">
-            <img class="profile-img" src="data:image/png;base64,{base64_img}">
+            <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
-                <h2 style="font-size:50px;">Aspiring AI Engineer</h2>
-                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px; font-size:20px;">
+                <h2 style="font-size:36px;">Aspiring AI Engineer</h2>
+                <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
                     👋 Hi, I'm Yashwanth! I am currently pursuing my Master of Engineering Management at Pennsylvania State University Harrisburg.
                     I bring both motivation and commitment to make meaningful contributions in engineering and AI fields.
                 </p>
@@ -62,8 +63,8 @@ with st.sidebar:
 
 # Main Content
 if selected_page == "About Me":
-    st.header("")
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=150)
+    # Removed the header "About Me" and enlarged the profile image and text
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=200)
 
     # Social media links arranged compactly below the text
     st.markdown("""
