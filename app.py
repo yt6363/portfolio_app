@@ -61,7 +61,7 @@ with st.sidebar:
     )
 
 # Main Content
-if selected_page == "About Me":
+if selected_page == "":
     st.header("About Me")
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=150)
 
