@@ -29,7 +29,7 @@ if selected_page == "About Me":
     I am currently pursuing a Master of Engineering Management at Pennsylvania State University Harrisburg, and have a Bachelor of Electrical and Electronics from Ramaiah Institute of Technology. 
     I have experience in engineering, quality, and project management, with a passion for improving processes and finding innovative solutions.
     """)
-    st.image("path/to/your/image.jpg", width=300, caption="T Yashwanth Sai")
+    st.image("Yashwanth sai Tatineni.jpeg", width=300, caption="T Yashwanth Sai")
 
 elif selected_page == "Resume":
     resume()
