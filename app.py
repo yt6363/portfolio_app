@@ -10,8 +10,65 @@ st.set_page_config(
     page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
+
+# Custom CSS for general app styling and top navigation bar styling
+st.markdown("""
+    <style>
+    /* Top Navigation Bar Styling */
+    .topnav {
+        background-color: #ffffff;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav a {
+        color: #333333;
+        text-align: center;
+        padding: 0 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .topnav a:hover {
+        color: #2b6cb0;
+    }
+
+    .topnav a.active {
+        color: #ff4b4b;
+        font-weight: bold;
+    }
+
+    /* Custom CSS for content section */
+    .content {
+        margin-top: 20px; /* Ensure content is not overlapped by navigation */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Top Navigation Bar
+selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
+
+st.markdown("""
+    <div class="topnav">
+        <a href="?page=about" target="_self" class="{active_about}">About Me</a>
+        <a href="?page=resume" target="_self" class="{active_resume}">Resume</a>
+        <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
+        <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
+        <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
+    </div>
+""".format(
+    active_about='active' if selected_page == 'about' else '',
+    active_resume='active' if selected_page == 'resume' else '',
+    active_experience='active' if selected_page == 'experience' else '',
+    active_projects='active' if selected_page == 'projects' else '',
+    active_contact='active' if selected_page == 'contact' else ''
+), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
 def add_profile_image(image_path, width):
@@ -58,74 +115,35 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Top Navigation Bar with Button Actions
-st.markdown(
-    """
-    <style>
-    .top-navbar {
-        background-color: #ffffff;
-        padding: 10px 0;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 20px;
-    }
-    .top-navbar button {
-        margin: 0 15px;
-        font-size: 20px;
-        color: #333;
-        background-color: transparent;
-        border: none;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    .top-navbar button:hover {
-        color: #FF4B4B;
-    }
-    .top-navbar button.active {
-        color: #FF4B4B;
-        border-bottom: 3px solid #FF4B4B;
-    }
-    </style>
-    <div class="top-navbar">
-        <button onclick="window.location.href='#about-me';">About Me</button>
-        <button onclick="window.location.href='#resume';">Resume</button>
-        <button onclick="window.location.href='#experience';">Experience</button>
-        <button onclick="window.location.href='#projects';">Projects</button>
-        <button onclick="window.location.href='#contact';">Contact</button>
-    </div>
-    """, unsafe_allow_html=True
-)
+# Main Content - Section Rendering Based on Selected Page
+st.markdown('<div class="content">', unsafe_allow_html=True)
 
-# Main Content Area
-selected_page = st.experimental_get_query_params().get("page", ["About Me"])[0]
-
-if selected_page == "About Me":
-    # Display the 'About Me' section
+if selected_page == "about":
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
-
-    # Social media links arranged compactly below the text
     st.markdown("""
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
-            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/yt6363">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-        </a>
-        <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
-            <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
-        </a>
-    </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
+                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/yt6363" target="_blank">
+                <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+            </a>
+            <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
+                <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+            </a>
+        </div>
     """, unsafe_allow_html=True)
 
-elif selected_page == "Resume":
+elif selected_page == "resume":
     resume()
 
-elif selected_page == "Experience":
+elif selected_page == "experience":
     experience()
 
-elif selected_page == "Projects":
+elif selected_page == "projects":
     projects()
 
-elif selected_page == "Contact":
+elif selected_page == "contact":
     contact()
+
+st.markdown('</div>', unsafe_allow_html=True)
