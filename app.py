@@ -22,7 +22,7 @@ st.markdown("""
         overflow: hidden;
         display: flex;
         justify-content: center;
-        padding: 40px 20px;
+        padding: 4px 50px;
        
     }
 
