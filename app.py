@@ -37,6 +37,12 @@ st.markdown("""
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
+            /* Improve the responsiveness of text container */
+            .text-container {
+                max-width: 90%;
+                margin: 0 auto; /* Center align */
+                font-size: 18px;
+            }
         }
         /* Profile image styles for uniformity */
         .profile-img {
@@ -50,13 +56,15 @@ st.markdown("""
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+            flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+            gap: 20px;
             margin-top: 50px;
         }
         .text-container {
             max-width: 600px;
             margin-left: 10px;
-            font-size: 20px;
+            font-size: 18px;
+            text-align: center; /* Center align for better readability on smaller screens */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -75,7 +83,7 @@ def add_profile_image(image_path, width):
             <div class="text-container">
                 <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
                 <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px;">
-                    👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
+                    👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
                     I am currently pursuing certifications in Six Sigma Green Belt and CAPM, which enhance my ability to deliver excellence in project execution. 
