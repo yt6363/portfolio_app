@@ -78,7 +78,7 @@ def experience():
 
         # Key skills as horizontally aligned tags
         if "skills" in exp:
-            tags = " ".join(
+            tags = "".join(
                 f"""
                 <span style="
                     background-color: #007bff; 
