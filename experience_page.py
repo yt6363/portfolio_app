@@ -93,7 +93,7 @@ def experience():
         col.markdown(
             f"""
             <div style="display: flex; align-items: center;">
-                <img src="{exp['logo']}" width="50" style="margin-right: 15px;">
+                <img src="{exp['logo']}" width="90" style="margin-right: 15px;">
                 <div>
                     <h3 style="margin: 0; color: #2b6cb0;">{exp['company']}</h3>
                     <p style="font-size: 13px; color: #6c757d;">{exp['location']}</p>
