@@ -59,10 +59,10 @@ def experience():
         )
 
         # Company logo and name
-        cols = st.columns([1, 5])
+        cols = st.columns([1, 8])
         with cols[0]:
             if exp["logo"]:
-                st.image(exp["logo"], width=60, use_column_width=False)
+                st.image(exp["logo"], width=50, use_column_width=False)
         with cols[1]:
             st.markdown(f"<h3 style='margin-bottom: 5px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
             st.markdown(f"<p style='font-size: 15px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
@@ -76,24 +76,25 @@ def experience():
         if "description" in exp:
             st.markdown(f"<p style='font-size: 15px; color: #4a5568; margin-top: 10px;'>{exp['description']}</p>", unsafe_allow_html=True)
 
-        # Key skills as tags
+        # Key skills as horizontally aligned tags
         if "skills" in exp:
-            st.markdown("<div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>", unsafe_allow_html=True)
-            for skill in exp["skills"]:
-                st.markdown(
-                    f"""
-                    <span style="
-                        background-color: #007bff; 
-                        color: white; 
-                        padding: 5px 10px; 
-                        border-radius: 5px; 
-                        font-size: 13px;
-                    ">
-                        {skill}
-                    </span>
-                    """, unsafe_allow_html=True
-                )
-            st.markdown("</div>", unsafe_allow_html=True)
+            tags = " ".join(
+                f"""
+                <span style="
+                    background-color: #007bff; 
+                    color: white; 
+                    padding: 5px 10px; 
+                    border-radius: 5px; 
+                    font-size: 13px;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    display: inline-block;
+                ">
+                    {skill}
+                </span>
+                """ for skill in exp["skills"]
+            )
+            st.markdown(f"<div style='margin-top: 10px;'>{tags}</div>", unsafe_allow_html=True)
 
         # Close card container
         st.markdown("</div>", unsafe_allow_html=True)
