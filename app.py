@@ -10,6 +10,7 @@ st.set_page_config(
     page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
+    initial_sidebar_state="collapsed"  # Collapses the sidebar to avoid side navigation default
 )
 
 # Function to create circular images with custom CSS styling
@@ -47,7 +48,7 @@ def add_profile_image(image_path, width):
             <div class="text-container">
                 <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
                 <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
-                    👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
+                    👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
                     I am currently pursuing certifications in Six Sigma Green Belt and CAPM, which enhance my ability to deliver excellence in project execution. 
@@ -74,30 +75,47 @@ st.markdown(
         text-decoration: none;
         color: #333;
         font-weight: bold;
+        padding: 5px 15px;
     }
     .top-navbar a:hover {
         color: #FF4B4B;
     }
     .top-navbar a.active {
         color: #FF4B4B;
+        border-bottom: 3px solid #FF4B4B;
     }
     </style>
     <div class="top-navbar">
-        <a href="/?page=about-me" class="{ 'active' if st.session_state.get('current_page') == 'about-me' else '' }" target="_blank">About Me</a>
-        <a href="/?page=resume" class="{ 'active' if st.session_state.get('current_page') == 'resume' else '' }" target="_blank">Resume</a>
-        <a href="/?page=experience" class="{ 'active' if st.session_state.get('current_page') == 'experience' else '' }" target="_blank">Experience</a>
-        <a href="/?page=projects" class="{ 'active' if st.session_state.get('current_page') == 'projects' else '' }" target="_blank">Projects</a>
-        <a href="/?page=contact" class="{ 'active' if st.session_state.get('current_page') == 'contact' else '' }" target="_blank">Contact</a>
+        <a href="#" onclick="window.location.hash='about-me';" class="{ 'active' if st.session_state.current_page == 'About Me' else '' }">About Me</a>
+        <a href="#" onclick="window.location.hash='resume';" class="{ 'active' if st.session_state.current_page == 'Resume' else '' }">Resume</a>
+        <a href="#" onclick="window.location.hash='experience';" class="{ 'active' if st.session_state.current_page == 'Experience' else '' }">Experience</a>
+        <a href="#" onclick="window.location.hash='projects';" class="{ 'active' if st.session_state.current_page == 'Projects' else '' }">Projects</a>
+        <a href="#" onclick="window.location.hash='contact';" class="{ 'active' if st.session_state.current_page == 'Contact' else '' }">Contact</a>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-# Determine which page to display
-current_page = st.experimental_get_query_params().get("page", ["about-me"])[0]
+# Initialize session state to manage page navigation
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = "About Me"
+
+# Capture the hash to determine the page switch
+js_script = """
+<script>
+    window.onload = function() {
+        const page = window.location.hash.replace('#', '');
+        if (page) {
+            window.parent.postMessage({type: "setCurrentPage", page: page}, "*");
+        }
+    };
+</script>
+"""
+
+st.markdown(js_script, unsafe_allow_html=True)
 
 # Main Content
-if current_page == "about-me":
+if st.session_state.current_page == "About Me":
     # Removed the header "About Me" and enlarged the profile image and text
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
 
@@ -116,14 +134,14 @@ if current_page == "about-me":
     </div>
     """, unsafe_allow_html=True)
 
-elif current_page == "resume":
+elif st.session_state.current_page == "Resume":
     resume()
 
-elif current_page == "experience":
+elif st.session_state.current_page == "Experience":
     experience()
 
-elif current_page == "projects":
+elif st.session_state.current_page == "Projects":
     projects()
 
-elif current_page == "contact":
+elif st.session_state.current_page == "Contact":
     contact()
