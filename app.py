@@ -1,5 +1,9 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from resume_page import resume
+from experience_page import experience
+from projects_page import projects
+from contact_page import contact
 import base64
 
 # Page setup
@@ -51,31 +55,6 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Custom CSS to lock the navigation bar
-st.markdown("""
-    <style>
-    /* Lock the sidebar to prevent it from scrolling */
-    [data-testid="stSidebar"] {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;  /* Adjust width if necessary */
-        height: 100%;
-        background-color: #f8f9fa;  /* Optionally change background color */
-        z-index: 1;
-    }
-
-    /* Adjust the main content to give space for the sidebar */
-    .main-content {
-        margin-left: 260px;  /* Adjust this value according to sidebar width */
-    }
-
-    [data-testid="stAppViewContainer"] {
-        overflow: auto;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
 # Sidebar Navigation
 with st.sidebar:
     selected_page = option_menu(
@@ -107,21 +86,13 @@ if selected_page == "About Me":
     """, unsafe_allow_html=True)
 
 elif selected_page == "Resume":
-    st.header("Resume")
-    st.write("Here's a quick overview of my educational and professional background.")
-    # Add resume details here...
+    resume()
 
 elif selected_page == "Experience":
-    st.header("Experience")
-    st.write("Here are some of my roles and responsibilities:")
-    # Add experience details here...
+    experience()
 
 elif selected_page == "Projects":
-    st.header("Projects")
-    st.write("Here are some of the projects I've worked on:")
-    # Add project details here...
+    projects()
 
 elif selected_page == "Contact":
-    st.header("Contact Me")
-    st.write("Feel free to reach out via the form below:")
-    # Add contact form here...
+    contact()
