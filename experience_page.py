@@ -15,67 +15,43 @@ def experience():
             "role": [
                 {"title": "Graduate Wage Assistant", "duration": "Oct 2023 - Present", "details": "Part-time | On-site"}
             ],
-            "description": """
-                <ul>
-                    <li>Assist faculty in special projects</li>
-                    <li>Laboratory instruction</li>
-                    <li>Grading assignments for 140 undergraduate students</li>
-                </ul>
-            """,
+            "description": [
+                "Assist faculty in special projects.",
+                "Laboratory instruction.",
+                "Grading assignments for 140 undergraduate students."
+            ],
             "location": "📍 Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
-        # Add more experiences as needed
+        # Add more experiences as needed...
     ]
 
-    # Render each experience entry with a simple and clean design
+    # Render each experience entry
     for exp in experience_entries:
-        # Company logo and name (no container or box for a cleaner look)
-        cols = st.columns([0.5, 9.5])  # Adjust column ratios for proper spacing
+        cols = st.columns([0.5, 9.5])  # Adjusted column ratios for proper spacing
         with cols[0]:
             if exp["logo"]:
                 st.image(exp["logo"], width=50, use_column_width=False)
         with cols[1]:
-            st.markdown(f"<h3 style='margin-bottom: 5px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; color: #6c757d; margin-top: -5px;'>{exp['location']}</p>", unsafe_allow_html=True)
+            st.markdown(f"**{exp['company']}**", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
 
         # Role entries
         for role in exp["role"]:
-            st.markdown(f"<h5 style='color: #333; margin-bottom: 2px;'>{role['title']}</h5>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -10px;'>{role['duration']} | {role['details']}</p>", unsafe_allow_html=True)
+            st.markdown(f"**{role['title']}**  \n{role['duration']} | {role['details']}", unsafe_allow_html=True)
 
-        # Expandable description
-        if "description" in exp:
-            with st.expander("Responsibilities and Contributions"):
-                st.markdown(f"{exp['description']}", unsafe_allow_html=True)
+        # Expandable description for responsibilities
+        with st.expander("Responsibilities and Contributions"):
+            for item in exp["description"]:
+                st.write(f"- {item}")
 
         # Key skills presented as simple tags without extra styling
-        if "skills" in exp:
-            st.markdown("**Skills:**", unsafe_allow_html=True)
-            skill_tags = " ".join(
-                [
-                    f"""
-                    <span style="
-                        background-color: #e0e0e0; 
-                        color: #333; 
-                        padding: 5px 10px; 
-                        border-radius: 5px; 
-                        font-size: 12px;
-                        margin-right: 5px;
-                        margin-bottom: 5px;
-                        display: inline-block;
-                    ">
-                        {skill}
-                    </span>
-                    """
-                    for skill in exp["skills"]
-                ]
-            )
-            st.markdown(f"<div style='margin-top: 10px;'>{skill_tags}</div>", unsafe_allow_html=True)
+        st.markdown("**Skills:**")
+        st.write(", ".join(exp["skills"]))
 
         # Add some space after each experience entry for better separation
-        st.markdown("<hr style='border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+        st.markdown("---")
 
 # Call the function to render the experience page
 if __name__ == "__main__":
