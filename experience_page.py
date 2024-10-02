@@ -6,12 +6,17 @@ from io import BytesIO
 # Set page configuration
 st.set_page_config(layout="wide")
 
-# Page header with divider
-st.header("Experience")
+# Page header with styling
+st.markdown(
+    """
+    <h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Experience</h1>
+    """,
+    unsafe_allow_html=True
+)
 
-# Placeholder images (use URLs instead)
-datadoit_logo_url = "https://via.placeholder.com/100"
-avidea_logo_url = "https://via.placeholder.com/100"
+# Placeholder images (use URLs for logos if they aren't available locally)
+datadoit_logo_url = "https://via.placeholder.com/80"
+avidea_logo_url = "https://via.placeholder.com/80"
 
 # Load images from URLs
 response_datadoit = requests.get(datadoit_logo_url)
@@ -51,19 +56,23 @@ experience_entries = [
     }
 ]
 
-# CSS styling
+# CSS styling for a modern, sleek look
 css_styles = """
 <style>
     .experience-container {
-        padding: 15px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .experience-header {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: bold;
-        color: #2b6cb0;
+        color: #1f77b4;
     }
     .experience-duration {
-        font-size: 16px;
+        font-size: 15px;
         color: #6c757d;
     }
     .experience-description {
@@ -75,36 +84,36 @@ css_styles = """
         background-color: #007bff;
         color: white;
         padding: 5px 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         margin-right: 5px;
         margin-top: 10px;
-        font-size: 13px;
+        font-size: 12px;
     }
 </style>
 """
 st.markdown(css_styles, unsafe_allow_html=True)
 
-# Display each experience entry
+# Render each experience in a clean card-like format
 for exp in experience_entries:
     with st.container():
-        # Create two columns, one for image and one for text
-        image_column, text_column = st.columns((1, 5))
+        st.markdown("<div class='experience-container'>", unsafe_allow_html=True)
 
-        # Display company logo
-        with image_column:
+        # Two columns for logo and details
+        logo_col, details_col = st.columns((1, 4))
+
+        with logo_col:
             st.image(exp["logo"], width=80)
 
-        # Display experience details
-        with text_column:
+        with details_col:
             # Header with company link
             st.markdown(
-                f"<h2 class='experience-header'>{exp['title']} @ <a href='{exp['link']}' target='_blank'>{exp['company']}</a></h2>",
+                f"<h3 class='experience-header'>{exp['title']} @ <a href='{exp['link']}' target='_blank'>{exp['company']}</a></h3>",
                 unsafe_allow_html=True
             )
             st.markdown(f"<p class='experience-duration'>{exp['duration']}</p>", unsafe_allow_html=True)
 
             # Description bullet points
-            st.markdown("<ul>", unsafe_allow_html=True)
+            st.markdown("<ul style='padding-left: 20px;'>", unsafe_allow_html=True)
             for desc in exp["description"]:
                 st.markdown(f"<li class='experience-description'>{desc}</li>", unsafe_allow_html=True)
             st.markdown("</ul>", unsafe_allow_html=True)
@@ -112,3 +121,5 @@ for exp in experience_entries:
             # Skills tags
             for skill in exp["skills"]:
                 st.markdown(f"<span class='skills-tag'>{skill}</span>", unsafe_allow_html=True)
+
+        st.markdown("</div>", unsafe_allow_html=True)
