@@ -51,7 +51,7 @@ st.markdown("""
     /* Apply default zoom level for mobile devices */
     @media only screen and (max-width: 768px) {
         html {
-            zoom: 0.1;
+            zoom: 0.01;
         }
     }
     </style>
