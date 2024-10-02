@@ -20,7 +20,7 @@ def resume():
                 mime="application/pdf"
             )
 
-        # Render PDF pages as images
+        # Render PDF pages as high-resolution images
         try:
             with fitz.open(resume_path) as pdf_document:
                 num_pages = pdf_document.page_count
@@ -28,7 +28,14 @@ def resume():
 
                 for page_number in range(num_pages):
                     page = pdf_document.load_page(page_number)
-                    image = page.get_pixmap()
+
+                    # Use a higher scaling factor to improve image quality
+                    zoom_x = 2.0  # Increase to make the resolution higher (2.0 means 200%)
+                    zoom_y = 2.0
+                    matrix = fitz.Matrix(zoom_x, zoom_y)
+
+                    # Get high-resolution image of the page
+                    image = page.get_pixmap(matrix=matrix)
                     img_bytes = image.tobytes(output="png")
 
                     # Display image of the page in Streamlit
