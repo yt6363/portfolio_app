@@ -1,16 +1,24 @@
 import streamlit as st
 from PIL import Image
-from pathlib import Path
+import requests
+from io import BytesIO
 
 # Set page configuration
 st.set_page_config(layout="wide")
 
-# Page header with a divider
+# Page header with divider
 st.header("Experience")
 
-# Paths to assets and CSS
-datadoit_logo = Image.open("assets/datadoit.png")
-avidea_logo = Image.open("assets/avidea.png")
+# Placeholder images (use URLs instead)
+datadoit_logo_url = "https://via.placeholder.com/100"
+avidea_logo_url = "https://via.placeholder.com/100"
+
+# Load images from URLs
+response_datadoit = requests.get(datadoit_logo_url)
+datadoit_logo = Image.open(BytesIO(response_datadoit.content))
+
+response_avidea = requests.get(avidea_logo_url)
+avidea_logo = Image.open(BytesIO(response_avidea.content))
 
 # Define the experience entries
 experience_entries = [
@@ -104,4 +112,3 @@ for exp in experience_entries:
             # Skills tags
             for skill in exp["skills"]:
                 st.markdown(f"<span class='skills-tag'>{skill}</span>", unsafe_allow_html=True)
-
