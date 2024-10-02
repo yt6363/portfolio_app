@@ -11,8 +11,7 @@ st.set_page_config(
     page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
-    initial_sidebar_state="expanded",
-    theme="light"
+    initial_sidebar_state="expanded"
 )
 
 # Global CSS for better theme control and mobile responsiveness
