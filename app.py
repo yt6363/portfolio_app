@@ -29,20 +29,19 @@ st.markdown("""
     .topnav a {
         color: #333333;
         text-align: center;
-        padding: 14px 16px;
+        padding: 0 16px;
         text-decoration: none;
         font-size: 17px;
         font-weight: 500;
     }
 
     .topnav a:hover {
-        background-color: #f1f1f1;
         color: #2b6cb0;
     }
 
     .topnav a.active {
-        color: #ffffff;
-        background-color: #ff4b4b;
+        color: #ff4b4b;
+        font-weight: bold;
     }
 
     /* Custom CSS for content section */
@@ -57,11 +56,11 @@ selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
 
 st.markdown("""
     <div class="topnav">
-        <a href="?page=about" class="{active_about}">About Me</a>
-        <a href="?page=resume" class="{active_resume}">Resume</a>
-        <a href="?page=experience" class="{active_experience}">Experience</a>
-        <a href="?page=projects" class="{active_projects}">Projects</a>
-        <a href="?page=contact" class="{active_contact}">Contact</a>
+        <a href="?page=about" target="_self" class="{active_about}">About Me</a>
+        <a href="?page=resume" target="_self" class="{active_resume}">Resume</a>
+        <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
+        <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
+        <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
     </div>
 """.format(
     active_about='active' if selected_page == 'about' else '',
