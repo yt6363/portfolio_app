@@ -56,7 +56,7 @@ def experience():
         },
         {
             "company": "Bharat Electronics Limited",
-            "role": [{"title": "Student Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
+            "role": [{"title": "Overview Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
             "location": "📍 Bengaluru, Karnataka, India",
             "description": """
                 <ol>
