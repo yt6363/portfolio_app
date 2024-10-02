@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 
-# Use FontAwesome icons or emojis to make it more visually appealing.
 def experience():
     st.markdown(
         "<h1 style='text-align: center; color: #2b6cb0;'>Experience</h1>",
@@ -18,7 +17,7 @@ def experience():
             ],
             "location": "📍 Pennsylvania, United States",
             "skills": "Project Plans, Professional Skills, Leadership, and +27 skills",
-            "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"  # Replace with the actual logo URL if applicable
+            "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
         {
             "company": "Incredible India Projects Pvt Ltd.",
@@ -42,43 +41,43 @@ def experience():
             "location": "📍 Kanpur, Uttar Pradesh, India",
             "description": "Supported quality assurance for transformer manufacturing and ISO 9001 compliance.",
             "skills": "Project Plans, Multiple Projects, and +2 skills",
-            "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAq1BMVEX///8AAAD09PQgICDJ..."
+            "logo": "https://via.placeholder.com/100x100.png"  # Replaced base64 data with placeholder URL
         }
     ]
 
     # Render each experience entry in a "sleek card" format
     for exp in experience_entries:
-        # Card container with rounded corners and shadows
+        # Card container with reduced spacing and better alignment
         st.markdown(
             """
             <div style="
-                border: 1px solid #d3d3d3; 
+                border: 1px solid #e6e6e6; 
                 border-radius: 15px; 
-                padding: 25px; 
-                margin-bottom: 30px; 
+                padding: 20px; 
+                margin-bottom: 20px; 
                 background-color: #ffffff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             ">
             """, unsafe_allow_html=True
         )
 
         # Company logo and name
-        cols = st.columns([1, 5])
+        cols = st.columns([1, 6])
         with cols[0]:
             if exp["logo"]:
-                st.image(exp["logo"], width=70)
+                st.image(exp["logo"], width=60)
         with cols[1]:
-            st.markdown(f"<h2 style='margin-bottom: 5px; color: #2b6cb0;'>{exp['company']}</h2>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 15px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='margin-bottom: 5px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
 
         # Role entries
         for role in exp["role"]:
-            st.markdown(f"<h4 style='color: #333; margin-bottom: 3px;'>{role['title']}</h4>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; color: #6c757d; margin-top: -10px;'>{role['duration']}  |  {role['details']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<h5 style='color: #333; margin-bottom: 3px;'>{role['title']}</h5>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -10px;'>{role['duration']}  |  {role['details']}</p>", unsafe_allow_html=True)
 
         # Additional Description (Optional)
         if "description" in exp:
-            st.markdown(f"<p style='font-size: 15px; color: #4a5568;'>{exp['description']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; color: #4a5568;'>{exp['description']}</p>", unsafe_allow_html=True)
 
         # Key skills
         st.markdown(f"<p style='font-weight: bold; color: #2b6cb0;'>Key Skills:</p> <p style='color: #4a5568;'>{exp['skills']}</p>", unsafe_allow_html=True)
