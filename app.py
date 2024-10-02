@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 from resume_page import resume
 from experience_page import experience
 from projects_page import projects
@@ -14,53 +13,54 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for general app styling, with an emphasis on sidebar styling
+# Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
     <style>
-    /* Sidebar Navigation Styling */
-    .css-1lcbmhc.e1fqkh3o3 {
-        background-color: #ffffff !important;
-        border-right: 2px solid #d3d3d3;
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-        padding-top: 20px;
-    }
-
-    ul[data-testid="stSidebarNav"] {
-        padding-top: 10px;
-        font-size: 1rem;
-    }
-
-    /* Sidebar Items Styling */
-    .css-1v0mbdj.e1fqkh3o3 {
+    /* Top Navigation Bar Styling */
+    .topnav {
+        background-color: #ffffff;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
         padding: 10px 20px;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .css-1v0mbdj.e1fqkh3o3:hover {
-        background-color: #f0f2f6;
-        transform: translateX(5px);
+    .topnav a {
+        color: #333333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
     }
 
-    .css-1v0mbdj.e1fqkh3o3 > div {
-        font-weight: 600;
+    .topnav a:hover {
+        background-color: #f1f1f1;
         color: #2b6cb0;
     }
 
-    /* Active Item Styling */
-    .css-1v0mbdj.e1fqkh3o3[data-selected="true"] {
+    .topnav a.active {
+        color: #ffffff;
         background-color: #ff4b4b;
-        color: white !important;
     }
 
-    /* Icon Styling */
-    .css-1v0mbdj.e1fqkh3o3 > svg {
-        width: 20px;
-        height: 20px;
-        margin-right: 15px;
+    /* Custom CSS for content section */
+    .content {
+        margin-top: 60px; /* To ensure content is not overlapped by navigation */
     }
-
     </style>
+""", unsafe_allow_html=True)
+
+# Top Navigation Bar
+st.markdown("""
+    <div class="topnav">
+        <a href="#about-me" id="about-link">About Me</a>
+        <a href="#resume" id="resume-link">Resume</a>
+        <a href="#experience" id="experience-link">Experience</a>
+        <a href="#projects" id="projects-link">Projects</a>
+        <a href="#contact" id="contact-link">Contact</a>
+    </div>
 """, unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
@@ -108,23 +108,12 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Sidebar Navigation
-with st.sidebar:
-    selected_page = option_menu(
-        menu_title="Navigation",
-        options=["About Me", "Resume", "Experience", "Projects", "Contact"],
-        icons=["person-fill", "file-text", "briefcase", "folder", "envelope"],
-        menu_icon=None,  # Removed the icon for the sidebar menu
-        default_index=0,
-    )
-
 # Main Content
-if selected_page == "About Me":
-    # Removed the header "About Me" and enlarged the profile image and text
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+st.markdown('<div class="content" id="about-me">', unsafe_allow_html=True)
+add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
 
-    # Social media links arranged compactly below the text
-    st.markdown("""
+# Social media links arranged compactly below the text
+st.markdown("""
     <div style="text-align: center; margin-top: 20px;">
         <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
@@ -136,16 +125,17 @@ if selected_page == "About Me":
             <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
         </a>
     </div>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-elif selected_page == "Resume":
-    resume()
+# Create sections based on the navigation links
+st.markdown('<div class="content" id="resume">', unsafe_allow_html=True)
+resume()
 
-elif selected_page == "Experience":
-    experience()
+st.markdown('<div class="content" id="experience">', unsafe_allow_html=True)
+experience()
 
-elif selected_page == "Projects":
-    projects()
+st.markdown('<div class="content" id="projects">', unsafe_allow_html=True)
+projects()
 
-elif selected_page == "Contact":
-    contact()
+st.markdown('<div class="content" id="contact">', unsafe_allow_html=True)
+contact()
