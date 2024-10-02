@@ -1,24 +1,17 @@
 import streamlit as st
+import base64
 
 def resume():
     st.header("Resume")
     st.write("Here's a quick overview of my educational and professional background.")
-    st.markdown("""
-    **Education:**
-    - **Master of Engineering Management** - Pennsylvania State University Harrisburg (Jan 2023 - Dec 2024)
-      - CGPA: 3.7
-    - **Bachelor of Electrical and Electronics Engineering** - Ramaiah Institute of Technology (Aug 2018 - Sept 2022)
 
-    **Work Experience:**
-    - **Graduate Wage Associate** - Pennsylvania State University (Sept 2023 - May 2024)
-      - Assisted faculty in special projects and instructed undergraduate students.
-    - **Teaching Assistant** - Pennsylvania State University (Jan 2023 - Dec 2023)
-      - Assisted students in courses such as Digital Design and Electrical Communication.
-    - **Marketing Operations Intern** - Incredible India Projects Pvt Ltd (May 2022 - Dec 2022)
-      - Developed standards and assisted project managers with project risk logs and schedules.
-    
-    **Skills:**
-    - Tools: Microsoft Project, Figma, Confluence, JIRA, Primavera P6, MATLAB, Python, SQL, Tableau, SEO.
-    - Certifications: PMI CAPM (On-going), Google Project Management Certificate.
-    """)
-    st.download_button(label="Download Resume", data=open("path/to/your_resume.pdf", "rb"), file_name="Yashwanth_Sai_Resume.pdf")
+    # Display PDF file in an iframe
+    resume_path = "Yashwanth sai Tatineni Resume.pdf"  # Update this with the correct path to your PDF
+    with open(resume_path, "rb") as pdf_file:
+        base64_pdf = base64.b64encode(pdf_file.read()).decode("utf-8")
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
+
+    # Add a download button for the PDF
+    with open(resume_path, "rb") as pdf_file:
+        st.download_button(label="Download Resume", data=pdf_file, file_name="Yashwanth_sai_Tatineni_Resume.pdf", mime="application/pdf")
