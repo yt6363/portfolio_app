@@ -78,7 +78,9 @@ def experience():
 
         # Key skills as horizontally aligned tags
         if "skills" in exp:
-            tags_html = ""
+            tags_html = """
+                <div style='margin-top: 10px;'>
+            """
             for skill in exp["skills"]:
                 tags_html += f"""
                 <span style="
@@ -94,7 +96,8 @@ def experience():
                     {skill}
                 </span>
                 """
-            st.markdown(f"<div style='margin-top: 10px;'>{tags_html}</div>", unsafe_allow_html=True)
+            tags_html += "</div>"
+            st.markdown(tags_html, unsafe_allow_html=True)
 
         # Close card container
         st.markdown("</div>", unsafe_allow_html=True)
