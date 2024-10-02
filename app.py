@@ -38,7 +38,7 @@ def add_profile_image(image_path, width):
             margin-top: 50px;
         }}
         .text-container {{
-            max-width: 450px;
+            max-width: 600px;
             margin-left: 10px;
             font-size: 18px;
         }}
