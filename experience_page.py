@@ -62,7 +62,7 @@ def experience():
         cols = st.columns([0.5, 9.5])  # Adjusted column ratios to reduce space around the logo
         with cols[0]:
             if exp["logo"]:
-                st.image(exp["logo"], width=40, use_column_width=False)
+                st.image(exp["logo"], width=60, use_column_width=False)
         with cols[1]:
             st.markdown(f"<h3 style='margin-bottom: 2px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
             st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -5px;'>{exp['location']}</p>", unsafe_allow_html=True)
