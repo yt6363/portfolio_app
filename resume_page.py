@@ -1,18 +1,19 @@
 import streamlit as st
+import base64
 
 def resume():
     st.header("Resume")
     st.write("Here's a quick overview of my educational and professional background.")
 
-    # Direct download link for the resume (created from the Google Drive link)
-    resume_url = "https://drive.google.com/uc?export=download&id=14uBFlzeC86-Sx65Kci1Qcg7pGqmUdfw_"
+    # Local path to the resume
+    resume_path = "Yashwanth sai Tatineni Resume.pdf"
 
-    # Embed the PDF using an iframe
-    st.markdown(f"""
-        <div style="text-align: center;">
-            <iframe src="{resume_url}" width="700" height="1000"></iframe>
-        </div>
-    """, unsafe_allow_html=True)
+    # Encode PDF to base64 and display using iframe
+    with open(resume_path, "rb") as pdf_file:
+        base64_pdf = base64.b64encode(pdf_file.read()).decode("utf-8")
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
 
-    # Provide a download link for the resume
-    st.markdown(f'[Download Resume]({resume_url})', unsafe_allow_html=True)
+    # Add a download button for the PDF
+    with open(resume_path, "rb") as pdf_file:
+        st.download_button(label="Download Resume", data=pdf_file, file_name="Yashwanth_sai_Tatineni_Resume.pdf", mime="application/pdf")
