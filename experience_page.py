@@ -52,24 +52,27 @@ def experience():
 
         # Key skills presented as simple tags without extra styling
         if "skills" in exp:
-            tags_html = "<div style='margin-top: 10px;'>"
-            for skill in exp["skills"]:
-                tags_html += f"""
-                <span style="
-                    background-color: #e0e0e0; 
-                    color: #333; 
-                    padding: 3px 8px; 
-                    border-radius: 5px; 
-                    font-size: 12px;
-                    margin-right: 5px;
-                    margin-bottom: 5px;
-                    display: inline-block;
-                ">
-                    {skill}
-                </span>
-                """
-            tags_html += "</div>"
-            st.markdown(tags_html, unsafe_allow_html=True)
+            st.markdown("**Skills:**", unsafe_allow_html=True)
+            skill_tags = " ".join(
+                [
+                    f"""
+                    <span style="
+                        background-color: #e0e0e0; 
+                        color: #333; 
+                        padding: 5px 10px; 
+                        border-radius: 5px; 
+                        font-size: 12px;
+                        margin-right: 5px;
+                        margin-bottom: 5px;
+                        display: inline-block;
+                    ">
+                        {skill}
+                    </span>
+                    """
+                    for skill in exp["skills"]
+                ]
+            )
+            st.markdown(f"<div style='margin-top: 10px;'>{skill_tags}</div>", unsafe_allow_html=True)
 
         # Add some space after each experience entry for better separation
         st.markdown("<hr style='border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
