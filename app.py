@@ -31,7 +31,7 @@ st.markdown("""
         text-align: center;
         padding: 0 26px;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 26px;
         font-weight: 500;
     }
 
