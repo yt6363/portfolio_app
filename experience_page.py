@@ -1,118 +1,107 @@
 import streamlit as st
+from PIL import Image
+from pathlib import Path
 
-def experience():
-    # Page title
-    st.markdown(
-        "<h1 style='text-align: center; color: #2b6cb0;'>Experience</h1>",
-        unsafe_allow_html=True
-    )
+# Set page configuration
+st.set_page_config(layout="wide")
 
-    # List of experience entries (easy to modify and add/remove content)
-    experience_entries = [
-        {
-            "company": "Penn State Harrisburg",
-            "role": [
-                {"title": "Graduate Wage Assistant", "duration": "Oct 2023 - Present", "details": "Part-time | On-site"},
-                {"title": "Teaching Assistant", "duration": "Jan 2023 - Oct 2023", "details": "10 months"}
-            ],
-            "location": "📍 Pennsylvania, United States",
-            "skills": ["Project Plans", "Professional Skills", "Leadership", "+27 skills"],
-            "description": [
-                "Assisted faculty members in research and administrative tasks.",
-                "Developed course materials for undergraduate classes.",
-                "Guided students during lab sessions and provided tutoring assistance."
-            ],
-            "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
-        },
-        {
-            "company": "Incredible India Projects Pvt Ltd.",
-            "role": [{"title": "Marketing Operations Intern", "duration": "May 2022 - Dec 2022", "details": "8 mos | Hybrid"}],
-            "location": "📍 Hyderabad, Telangana, India",
-            "skills": ["Quality Management", "Microsoft Excel", "+11 skills"],
-            "description": [
-                "Developed standards and processes for marketing operations.",
-                "Created over 15 templates and workflows to streamline processes.",
-                "Coordinated marketing events to increase outreach."
-            ],
-            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
-        },
-        {
-            "company": "Bharat Electronics Limited",
-            "role": [{"title": "Student Intern", "duration": "Apr 2022 - May 2022", "details": "2 mos | On-site"}],
-            "location": "📍 Bengaluru, Karnataka, India",
-            "skills": ["Power Electronics Design", "Product Management", "+19 skills"],
-            "description": [
-                "Worked as an intern under electronic warfare and avionics SBU.",
-                "Assisted in power electronics design and testing.",
-                "Contributed to the development of electronic warfare systems."
-            ],
-            "logo": "https://media.licdn.com/dms/image/v2/D560BAQEoT1DsKihRxQ/company-logo_100_100/company-logo_100_100/0/1725596070207/bharat_electronics_limited_logo?e=1735776000&v=beta&t=j77_3BJFaVrjoJ-eUh96puYmDlvvMnwvEyw-gisX1SI"
-        },
-        {
-            "company": "New Tech Transformers Pvt Ltd.",
-            "role": [{"title": "Quality and Project Management Intern", "duration": "May 2021 - Aug 2021", "details": "4 mos | Hybrid"}],
-            "location": "📍 Kanpur, Uttar Pradesh, India",
-            "skills": ["Project Plans", "ISO 9001 Compliance", "Multiple Projects"],
-            "description": [
-                "Supported quality assurance for transformer manufacturing.",
-                "Assisted in ISO 9001 compliance processes and documentation.",
-                "Worked on project management tasks for various client projects."
-            ],
-            "logo": "https://via.placeholder.com/100x100.png"
-        }
-    ]
+# Page header with a divider
+st.header("Experience")
 
-    # Render each experience entry in a modern, clean format
-    for exp in experience_entries:
-        # Card container with modern styling
-        st.markdown(
-            """
-            <div style="
-                border-radius: 10px; 
-                padding: 20px; 
-                margin-bottom: 20px; 
-                background-color: #f8f9fa; 
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            ">
-            """, unsafe_allow_html=True
-        )
+# Paths to assets and CSS
+datadoit_logo = Image.open("assets/datadoit.png")
+avidea_logo = Image.open("assets/avidea.png")
 
-        # Company logo and details
-        cols = st.columns([1, 8])
-        with cols[0]:
-            if exp["logo"]:
-                st.image(exp["logo"], width=50)
-        with cols[1]:
-            st.markdown(f"<h4 style='color: #2b6cb0;'>{exp['role'][0]['title']} @ {exp['company']}</h4>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; color: #6c757d;'>{exp['role'][0]['duration']} | {exp['location']}</p>", unsafe_allow_html=True)
+# Define the experience entries
+experience_entries = [
+    {
+        "company": "Avidea",
+        "title": "AI Engineer (End-of-studies Internship)",
+        "duration": "Feb 2024 - May 2024",
+        "description": [
+            "Trained a car damage segmentation model to identify 6 damage types in insurance subscription images.",
+            "Created and containerized an API, enabling deployment and integration by the web team on Avidea’s demo page.",
+            "Reduced the necessary time to process images by a factor of 3 and cut workforce requirements by 20%."
+        ],
+        "skills": ["MMDetection", "Ultralytics", "YOLOv8", "Label Studio", "Docker", "Flask"],
+        "logo": avidea_logo,
+        "link": "https://www.avidea.tn/"
+    },
+    {
+        "company": "DataDoIt",
+        "title": "AI Engineer (Summer Internship)",
+        "duration": "Jul 2023 - Aug 2023",
+        "description": [
+            "Developed an API for scanning and displaying local network RTSP camera streams.",
+            "Explored the NVIDIA TAO toolkit 4.0 and trained and benchmarked various object detection models from its vast model zoo, achieving 0.90 mAP for the best model, YOLOv4.",
+            "Explored methods for enhancing model precision with limited real data, settling on training on mixed data (real + synthetic) and validating on real data only.",
+            "Achieved a 0.96 mAP50 on the validation set using the YOLOv8 model with mixed data and generated a TensorRT engine to optimize the model for inference."
+        ],
+        "skills": ["Python", "Linux", "Flask", "NVIDIA TAO", "Ultralytics", "YOLOv8"],
+        "logo": datadoit_logo,
+        "link": "https://data-doit.com/"
+    }
+]
 
-        # Role descriptions in bullet points
-        st.markdown("<ul>", unsafe_allow_html=True)
-        for desc in exp["description"]:
-            st.markdown(f"<li style='font-size: 14px; color: #333;'>{desc}</li>", unsafe_allow_html=True)
-        st.markdown("</ul>", unsafe_allow_html=True)
+# CSS styling
+css_styles = """
+<style>
+    .experience-container {
+        padding: 15px 0;
+    }
+    .experience-header {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2b6cb0;
+    }
+    .experience-duration {
+        font-size: 16px;
+        color: #6c757d;
+    }
+    .experience-description {
+        font-size: 15px;
+        color: #333;
+    }
+    .skills-tag {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+</style>
+"""
+st.markdown(css_styles, unsafe_allow_html=True)
 
-        # Skills as tags
-        st.markdown("<div style='display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;'>", unsafe_allow_html=True)
-        for skill in exp["skills"]:
+# Display each experience entry
+for exp in experience_entries:
+    with st.container():
+        # Create two columns, one for image and one for text
+        image_column, text_column = st.columns((1, 5))
+
+        # Display company logo
+        with image_column:
+            st.image(exp["logo"], width=80)
+
+        # Display experience details
+        with text_column:
+            # Header with company link
             st.markdown(
-                f"""
-                <span style="
-                    background-color: #007bff; 
-                    color: white; 
-                    padding: 4px 8px; 
-                    border-radius: 5px; 
-                    font-size: 12px;
-                ">
-                    {skill}
-                </span>
-                """, unsafe_allow_html=True
+                f"<h2 class='experience-header'>{exp['title']} @ <a href='{exp['link']}' target='_blank'>{exp['company']}</a></h2>",
+                unsafe_allow_html=True
             )
-        st.markdown("</div>", unsafe_allow_html=True)
+            st.markdown(f"<p class='experience-duration'>{exp['duration']}</p>", unsafe_allow_html=True)
 
-        # Close card container
-        st.markdown("</div>", unsafe_allow_html=True)
+            # Description bullet points
+            st.markdown("<ul>", unsafe_allow_html=True)
+            for desc in exp["description"]:
+                st.markdown(f"<li class='experience-description'>{desc}</li>", unsafe_allow_html=True)
+            st.markdown("</ul>", unsafe_allow_html=True)
 
-# Call the function to render the experience page
-if __name__ == "__main__":
-    experience()
+            # Skills tags
+            for skill in exp["skills"]:
+                st.markdown(f"<span class='skills-tag'>{skill}</span>", unsafe_allow_html=True)
+
