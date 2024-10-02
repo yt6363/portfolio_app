@@ -59,7 +59,7 @@ def experience():
         )
 
         # Company logo and name
-        cols = st.columns([1, 8])
+        cols = st.columns([0.5, 9.5])  # Adjusted column ratios to reduce space around the logo
         with cols[0]:
             if exp["logo"]:
                 st.image(exp["logo"], width=40, use_column_width=False)
