@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 from resume_page import resume
 from experience_page import experience
 from projects_page import projects
@@ -10,65 +11,7 @@ st.set_page_config(
     page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
-    initial_sidebar_state="expanded"
 )
-
-# Custom CSS for general app styling and top navigation bar styling
-st.markdown("""
-    <style>
-    /* Top Navigation Bar Styling */
-    .topnav {
-        background-color: #ffffff;
-        overflow: hidden;
-        display: flex;
-        justify-content: flex-end;
-        padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .topnav a {
-        color: #333333;
-        text-align: center;
-        padding: 0 16px;
-        text-decoration: none;
-        font-size: 17px;
-        font-weight: 500;
-    }
-
-    .topnav a:hover {
-        color: #2b6cb0;
-    }
-
-    .topnav a.active {
-        color: #ff4b4b;
-        font-weight: bold;
-    }
-
-    /* Custom CSS for content section */
-    .content {
-        margin-top: 20px; /* Ensure content is not overlapped by navigation */
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Top Navigation Bar
-selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
-
-st.markdown("""
-    <div class="topnav">
-        <a href="?page=about" target="_self" class="{active_about}">About Me</a>
-        <a href="?page=resume" target="_self" class="{active_resume}">Resume</a>
-        <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
-        <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
-        <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
-    </div>
-""".format(
-    active_about='active' if selected_page == 'about' else '',
-    active_resume='active' if selected_page == 'resume' else '',
-    active_experience='active' if selected_page == 'experience' else '',
-    active_projects='active' if selected_page == 'projects' else '',
-    active_contact='active' if selected_page == 'contact' else ''
-), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
 def add_profile_image(image_path, width):
@@ -105,7 +48,7 @@ def add_profile_image(image_path, width):
             <div class="text-container">
                 <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
                 <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
-                    👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
+                    👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
                     I am currently pursuing certifications in Six Sigma Green Belt and CAPM, which enhance my ability to deliver excellence in project execution. 
@@ -115,35 +58,62 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Main Content - Section Rendering Based on Selected Page
-st.markdown('<div class="content">', unsafe_allow_html=True)
+# Sidebar Navigation
+with st.sidebar:
+    selected_page = option_menu(
+        menu_title=None,  # Removed the title from the sidebar
+        options=["About Me", "Resume", "Experience", "Projects", "Contact"],
+        icons=["person-fill", "file-text", "briefcase", "folder", "envelope"],
+        menu_icon=None,  # Removed the menu icon
+        default_index=0,
+        styles={
+            "container": {
+                "padding": "0 !important",
+                "background-color": "transparent",  # Remove any box background
+                "box-shadow": "none",  # Remove the box shadow
+                "border": "none",  # Remove border
+            },
+            "nav-link": {
+                "font-size": "18px",
+                "text-align": "left",
+                "margin": "0px",
+                "--hover-color": "#f0f0f0",  # Background color when hovering
+            },
+            "nav-link-selected": {
+                "background-color": "#FF4B4B",
+                "color": "white",
+            },
+        }
+    )
 
-if selected_page == "about":
+# Main Content
+if selected_page == "About Me":
+    # Removed the header "About Me" and enlarged the profile image and text
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+
+    # Social media links arranged compactly below the text
     st.markdown("""
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
-                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-            </a>
-            <a href="https://github.com/yt6363" target="_blank">
-                <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-            </a>
-            <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
-                <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
-            </a>
-        </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
+            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/yt6363">
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        </a>
+        <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
+            <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+        </a>
+    </div>
     """, unsafe_allow_html=True)
 
-elif selected_page == "resume":
+elif selected_page == "Resume":
     resume()
 
-elif selected_page == "experience":
+elif selected_page == "Experience":
     experience()
 
-elif selected_page == "projects":
+elif selected_page == "Projects":
     projects()
 
-elif selected_page == "contact":
+elif selected_page == "Contact":
     contact()
-
-st.markdown('</div>', unsafe_allow_html=True)
