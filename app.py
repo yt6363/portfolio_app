@@ -21,7 +21,7 @@ st.markdown("""
         background-color: #ffffff;
         overflow: hidden;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         padding: 10px 20px;
        
     }
