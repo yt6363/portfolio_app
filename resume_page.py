@@ -30,8 +30,8 @@ def resume():
                     page = pdf_document.load_page(page_number)
 
                     # Use a higher scaling factor to improve image quality
-                    zoom_x = 1.0  # Increase to make the resolution higher (2.0 means 200%)
-                    zoom_y = 1.0
+                    zoom_x = 2.0  # Increase to make the resolution higher (2.0 means 200%)
+                    zoom_y = 2.0
                     matrix = fitz.Matrix(zoom_x, zoom_y)
 
                     # Get high-resolution image of the page
