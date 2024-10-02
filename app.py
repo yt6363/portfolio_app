@@ -46,10 +46,13 @@ def add_profile_image(image_path, width):
         <div class="profile-container">
             <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
-                <h2 style="font-size:36px;">Aspiring AI Engineer</h2>
+                <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
                 <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
-                    👋 Hi, I'm Yashwanth! I am currently pursuing my Master of Engineering Management at Pennsylvania State University Harrisburg.
-                    I bring both motivation and commitment to make meaningful contributions in engineering and AI fields.
+                    👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
+                    quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
+                    and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
+                    I am currently pursuing certifications in Six Sigma Green Belt and CAPM, which enhance my ability to deliver excellence in project execution. 
+                    I am driven by a desire to apply my skills to meaningful, impact-driven projects.
                 </p>
             </div>
         </div>
