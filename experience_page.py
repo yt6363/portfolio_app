@@ -15,8 +15,7 @@ def experience():
                 {"title": "Graduate Wage Assistant", "duration": "Oct 2023 - Present", "details": "Part-time | On-site"},
                
             ],
-            "description": " Assist faculty in special project.
-             Laboratory instruction & grading assignments of 140 undergraduate students..",
+            "description": "Assist faculty in special project, Laboratory instruction & grading assignments of 140 undergraduate students..",
             "location": "📍 Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership", "+27 skills"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
