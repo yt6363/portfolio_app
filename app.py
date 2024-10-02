@@ -71,7 +71,7 @@ with st.sidebar:
 # Main Content
 if selected_page == "About Me":
     # Removed the header "About Me" and enlarged the profile image and text
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=200)
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
 
     # Social media links arranged compactly below the text
     st.markdown("""
