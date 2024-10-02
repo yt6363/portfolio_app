@@ -114,7 +114,7 @@ with st.sidebar:
         menu_title="Navigation",
         options=["About Me", "Resume", "Experience", "Projects", "Contact"],
         icons=["person-fill", "file-text", "briefcase", "folder", "envelope"],
-        menu_icon="cast",
+        menu_icon=None,  # Removed the icon for the sidebar menu
         default_index=0,
     )
 
