@@ -47,21 +47,29 @@ st.markdown("""
 
     /* Custom CSS for content section */
     .content {
-        margin-top: 60px; /* To ensure content is not overlapped by navigation */
+        margin-top: 20px; /* Ensure content is not overlapped by navigation */
     }
     </style>
 """, unsafe_allow_html=True)
 
 # Top Navigation Bar
+selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
+
 st.markdown("""
     <div class="topnav">
-        <a href="#about-me" id="about-link">About Me</a>
-        <a href="#resume" id="resume-link">Resume</a>
-        <a href="#experience" id="experience-link">Experience</a>
-        <a href="#projects" id="projects-link">Projects</a>
-        <a href="#contact" id="contact-link">Contact</a>
+        <a href="?page=about" class="{active_about}">About Me</a>
+        <a href="?page=resume" class="{active_resume}">Resume</a>
+        <a href="?page=experience" class="{active_experience}">Experience</a>
+        <a href="?page=projects" class="{active_projects}">Projects</a>
+        <a href="?page=contact" class="{active_contact}">Contact</a>
     </div>
-""", unsafe_allow_html=True)
+""".format(
+    active_about='active' if selected_page == 'about' else '',
+    active_resume='active' if selected_page == 'resume' else '',
+    active_experience='active' if selected_page == 'experience' else '',
+    active_projects='active' if selected_page == 'projects' else '',
+    active_contact='active' if selected_page == 'contact' else ''
+), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
 def add_profile_image(image_path, width):
@@ -98,7 +106,7 @@ def add_profile_image(image_path, width):
             <div class="text-container">
                 <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
                 <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
-                    👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
+                    👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
                     I am currently pursuing certifications in Six Sigma Green Belt and CAPM, which enhance my ability to deliver excellence in project execution. 
@@ -108,34 +116,35 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Main Content
-st.markdown('<div class="content" id="about-me">', unsafe_allow_html=True)
-add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+# Main Content - Section Rendering Based on Selected Page
+st.markdown('<div class="content">', unsafe_allow_html=True)
 
-# Social media links arranged compactly below the text
-st.markdown("""
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
-            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/yt6363" target="_blank">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-        </a>
-        <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
-            <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
-        </a>
-    </div>
-""", unsafe_allow_html=True)
+if selected_page == "about":
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+    st.markdown("""
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
+                <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/yt6363" target="_blank">
+                <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+            </a>
+            <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
+                <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+            </a>
+        </div>
+    """, unsafe_allow_html=True)
 
-# Create sections based on the navigation links
-st.markdown('<div class="content" id="resume">', unsafe_allow_html=True)
-resume()
+elif selected_page == "resume":
+    resume()
 
-st.markdown('<div class="content" id="experience">', unsafe_allow_html=True)
-experience()
+elif selected_page == "experience":
+    experience()
 
-st.markdown('<div class="content" id="projects">', unsafe_allow_html=True)
-projects()
+elif selected_page == "projects":
+    projects()
 
-st.markdown('<div class="content" id="contact">', unsafe_allow_html=True)
-contact()
+elif selected_page == "contact":
+    contact()
+
+st.markdown('</div>', unsafe_allow_html=True)
