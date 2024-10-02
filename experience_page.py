@@ -62,33 +62,33 @@ def experience():
         cols = st.columns([1, 8])
         with cols[0]:
             if exp["logo"]:
-                st.image(exp["logo"], width=50, use_column_width=False)
+                st.image(exp["logo"], width=40, use_column_width=False)
         with cols[1]:
-            st.markdown(f"<h3 style='margin-bottom: 5px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 15px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='margin-bottom: 2px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -5px;'>{exp['location']}</p>", unsafe_allow_html=True)
 
         # Role entries
         for role in exp["role"]:
-            st.markdown(f"<h5 style='color: #333; margin-bottom: 5px;'>{role['title']}</h5>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; color: #6c757d; margin-top: -10px;'>{role['duration']} | {role['details']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<h5 style='color: #333; margin-bottom: 2px;'>{role['title']}</h5>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -10px;'>{role['duration']} | {role['details']}</p>", unsafe_allow_html=True)
 
         # Additional Description (Optional)
         if "description" in exp:
-            st.markdown(f"<p style='font-size: 15px; color: #4a5568; margin-top: 10px;'>{exp['description']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 13px; color: #4a5568; margin-top: 5px;'>{exp['description']}</p>", unsafe_allow_html=True)
 
         # Key skills as horizontally aligned tags
         if "skills" in exp:
             tags_html = """
-                <div style='margin-top: 10px;'>
+                <div style='margin-top: 5px; display: flex; flex-wrap: wrap;'>
             """
             for skill in exp["skills"]:
                 tags_html += f"""
                 <span style="
                     background-color: #007bff; 
                     color: white; 
-                    padding: 5px 10px; 
+                    padding: 3px 8px; 
                     border-radius: 5px; 
-                    font-size: 13px;
+                    font-size: 12px;
                     margin-right: 5px;
                     margin-bottom: 5px;
                     display: inline-block;
