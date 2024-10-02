@@ -73,7 +73,7 @@ if selected_page == "About Me":
     # Social media links arranged compactly below the text
     st.markdown("""
     <div style="text-align: center; margin-top: 20px;">
-        <a href="https://linkedin.com/in/Yashwanth" target="_blank">
+        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
         </a>
         <a href="https://github.com/Yashwanth" target="_blank">
