@@ -31,7 +31,7 @@ def experience():
             "location": "Bengaluru, Karnataka, India",
             "description": "Worked as an intern under electronic warfare and avionics SBU.",
             "skills": "Power Electronics Design, Product Management, and +19 skills",
-            "logo": "https://via.placeholder.com/100x100.png"  # Replace with the actual logo URL if applicable
+            "logo": "BEL Logo.jpeg"  # Replace with the actual logo URL if applicable
         },
         {
             "company": "New Tech Transformers Pvt Ltd.",
