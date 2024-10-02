@@ -11,7 +11,56 @@ st.set_page_config(
     page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
+    initial_sidebar_state="expanded",
+    theme="light"
 )
+
+# Global CSS for better theme control and mobile responsiveness
+st.markdown("""
+    <style>
+        /* Set body to use a light theme for improved visibility */
+        body {
+            color: #333;
+            background-color: #ffffff;
+        }
+        /* Improve the look on mobile screens */
+        @media (max-width: 768px) {
+            h1, h2, h3, p {
+                font-size: larger; /* Increase text size on mobile */
+            }
+            /* Make images more responsive */
+            div[data-testid="stImage"] img {
+                max-width: 100%;
+                height: auto;
+            }
+            /* Reduce padding to maximize space on mobile */
+            .main > div {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        /* Profile image styles for uniformity */
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #FF4B4B;
+        }
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .text-container {
+            max-width: 600px;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
 def add_profile_image(image_path, width):
@@ -22,32 +71,11 @@ def add_profile_image(image_path, width):
 
     # Render circular image using CSS
     st.markdown(f"""
-        <style>
-        .profile-img {{
-            width: {width}px;
-            height: {width}px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #FF4B4B;
-        }}
-        .profile-container {{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }}
-        .text-container {{
-            max-width: 600px;
-            margin-left: 10px;
-            font-size: 18px;
-        }}
-        </style>
         <div class="profile-container">
             <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
                 <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
-                <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
+                <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px;">
                     👋 Hi, I'm Yashwanth an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
@@ -76,7 +104,7 @@ if selected_page == "About Me":
     # Social media links arranged compactly below the text
     st.markdown("""
     <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
+        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
         </a>
         <a href="https://github.com/yt6363">
