@@ -3,7 +3,7 @@ import os
 import fitz  # PyMuPDF
 
 def resume():
-    st.header("Resume")
+    st.header("")
     st.write("Here's a quick overview of my educational and professional background.")
 
     # Path to the local resume file
