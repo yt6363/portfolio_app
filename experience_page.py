@@ -62,17 +62,17 @@ def experience():
         }
     ]
 
-    # Render each experience entry in a sleek, compact format
+    # Render each experience entry in a modern, clean format
     for exp in experience_entries:
         # Card container with modern styling
         st.markdown(
             """
             <div style="
-                border-radius: 15px; 
+                border-radius: 10px; 
                 padding: 20px; 
-                margin-bottom: 25px; 
-                background-color: #0e1117;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px; 
+                background-color: #f8f9fa; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             ">
             """, unsafe_allow_html=True
         )
@@ -81,28 +81,28 @@ def experience():
         cols = st.columns([1, 8])
         with cols[0]:
             if exp["logo"]:
-                st.image(exp["logo"], width=60)
+                st.image(exp["logo"], width=50)
         with cols[1]:
-            st.markdown(f"<h3 style='color: #f1f1f1;'>{exp['role'][0]['title']} @ {exp['company']}</h3>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; color: #a3a3a3;'>{exp['role'][0]['duration']} | {exp['location']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<h4 style='color: #2b6cb0;'>{exp['role'][0]['title']} @ {exp['company']}</h4>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; color: #6c757d;'>{exp['role'][0]['duration']} | {exp['location']}</p>", unsafe_allow_html=True)
 
         # Role descriptions in bullet points
         st.markdown("<ul>", unsafe_allow_html=True)
         for desc in exp["description"]:
-            st.markdown(f"<li style='color: #f1f1f1; font-size: 15px;'>{desc}</li>", unsafe_allow_html=True)
+            st.markdown(f"<li style='font-size: 14px; color: #333;'>{desc}</li>", unsafe_allow_html=True)
         st.markdown("</ul>", unsafe_allow_html=True)
 
         # Skills as tags
-        st.markdown("<div style='display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;'>", unsafe_allow_html=True)
+        st.markdown("<div style='display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;'>", unsafe_allow_html=True)
         for skill in exp["skills"]:
             st.markdown(
                 f"""
                 <span style="
-                    background-color: #1f6feb; 
+                    background-color: #007bff; 
                     color: white; 
-                    padding: 5px 10px; 
+                    padding: 4px 8px; 
                     border-radius: 5px; 
-                    font-size: 13px;
+                    font-size: 12px;
                 ">
                     {skill}
                 </span>
