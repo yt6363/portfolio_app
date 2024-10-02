@@ -1,19 +1,17 @@
 import streamlit as st
-import base64
+import os
 
 def resume():
     st.header("Resume")
     st.write("Here's a quick overview of my educational and professional background.")
 
-    # Local path to the resume
+    # Path to the local resume file
     resume_path = "Yashwanth sai Tatineni Resume.pdf"
 
-    # Encode PDF to base64 and display using iframe
-    with open(resume_path, "rb") as pdf_file:
-        base64_pdf = base64.b64encode(pdf_file.read()).decode("utf-8")
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
-
-    # Add a download button for the PDF
-    with open(resume_path, "rb") as pdf_file:
-        st.download_button(label="Download Resume", data=pdf_file, file_name="Yashwanth_sai_Tatineni_Resume.pdf", mime="application/pdf")
+    # Check if file exists
+    if os.path.exists(resume_path):
+        # Add a download button for the PDF
+        with open(resume_path, "rb") as pdf_file:
+            st.download_button(label="Download Resume", data=pdf_file, file_name="Yashwanth_sai_Tatineni_Resume.pdf", mime="application/pdf")
+    else:
+        st.error("Resume file not found. Please ensure the file is in the correct location.")
