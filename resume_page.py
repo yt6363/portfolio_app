@@ -4,8 +4,8 @@ def resume():
     st.header("Resume")
     st.write("Here's a quick overview of my educational and professional background.")
 
-    # Public link to the resume (replace with your actual hosted link)
-    resume_url = "https://drive.google.com/file/d/14uBFlzeC86-Sx65Kci1Qcg7pGqmUdfw_/view?usp=drive_link"  # Replace with your actual link
+    # Direct download link for the resume (created from the Google Drive link)
+    resume_url = "https://drive.google.com/uc?export=download&id=14uBFlzeC86-Sx65Kci1Qcg7pGqmUdfw_"
 
     # Embed the PDF using an iframe
     st.markdown(f"""
@@ -15,4 +15,4 @@ def resume():
     """, unsafe_allow_html=True)
 
     # Provide a download link for the resume
-    st.markdown(f'[Download Resume](https://example.com/Yashwanth_sai_Tatineni_Resume.pdf)', unsafe_allow_html=True)
+    st.markdown(f'[Download Resume]({resume_url})', unsafe_allow_html=True)
