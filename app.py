@@ -87,7 +87,45 @@ st.markdown(
     }
     </style>
     <div class="top-navbar">
-        <button onclick="window.location.hash='#about-me';">About Me</button>
-        <button onclick="window.location.hash='#resume';">Resume</button>
-        <button onclick="window.location.hash='#experience';">Experience</button>
-       
+        <button onclick="window.location.href='#about-me';">About Me</button>
+        <button onclick="window.location.href='#resume';">Resume</button>
+        <button onclick="window.location.href='#experience';">Experience</button>
+        <button onclick="window.location.href='#projects';">Projects</button>
+        <button onclick="window.location.href='#contact';">Contact</button>
+    </div>
+    """, unsafe_allow_html=True
+)
+
+# Main Content Area
+selected_page = st.experimental_get_query_params().get("page", ["About Me"])[0]
+
+if selected_page == "About Me":
+    # Display the 'About Me' section
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+
+    # Social media links arranged compactly below the text
+    st.markdown("""
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
+            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/yt6363">
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        </a>
+        <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
+            <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
+elif selected_page == "Resume":
+    resume()
+
+elif selected_page == "Experience":
+    experience()
+
+elif selected_page == "Projects":
+    projects()
+
+elif selected_page == "Contact":
+    contact()
