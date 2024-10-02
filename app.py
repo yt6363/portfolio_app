@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 from resume_page import resume
 from experience_page import experience
 from projects_page import projects
@@ -58,46 +57,57 @@ def add_profile_image(image_path, width):
         </div>
     """, unsafe_allow_html=True)
 
-# Sidebar Navigation
-with st.sidebar:
-    selected_page = option_menu(
-        menu_title=None,  # Removed the title from the sidebar
-        options=["About Me", "Resume", "Experience", "Projects", "Contact"],
-        icons=["person-fill", "file-text", "briefcase", "folder", "envelope"],
-        menu_icon=None,  # Removed the menu icon
-        default_index=0,
-        styles={
-            "container": {
-                "padding": "0 !important",
-                "background-color": "transparent",  # Remove any box background
-                "box-shadow": "none",  # Remove the box shadow
-                "border": "none",  # Remove border
-            },
-            "nav-link": {
-                "font-size": "18px",
-                "text-align": "left",
-                "margin": "0px",
-                "--hover-color": "#f0f0f0",  # Background color when hovering
-            },
-            "nav-link-selected": {
-                "background-color": "#FF4B4B",
-                "color": "white",
-            },
-        }
-    )
+# Top Navigation Bar
+st.markdown(
+    """
+    <style>
+    .top-navbar {
+        background-color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    .top-navbar a {
+        margin: 0 15px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    .top-navbar a:hover {
+        color: #FF4B4B;
+    }
+    .top-navbar a.active {
+        color: #FF4B4B;
+    }
+    </style>
+    <div class="top-navbar">
+        <a href="/?page=about-me" class="{ 'active' if st.session_state.get('current_page') == 'about-me' else '' }">About Me</a>
+        <a href="/?page=resume" class="{ 'active' if st.session_state.get('current_page') == 'resume' else '' }">Resume</a>
+        <a href="/?page=experience" class="{ 'active' if st.session_state.get('current_page') == 'experience' else '' }">Experience</a>
+        <a href="/?page=projects" class="{ 'active' if st.session_state.get('current_page') == 'projects' else '' }">Projects</a>
+        <a href="/?page=contact" class="{ 'active' if st.session_state.get('current_page') == 'contact' else '' }">Contact</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Determine which page to display
+current_page = st.experimental_get_query_params().get("page", ["about-me"])[0]
 
 # Main Content
-if selected_page == "About Me":
+if current_page == "about-me":
     # Removed the header "About Me" and enlarged the profile image and text
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
 
     # Social media links arranged compactly below the text
     st.markdown("""
     <div style="text-align: center; margin-top: 20px;">
-        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/"_blank">
+        <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
         </a>
-        <a href="https://github.com/yt6363">
+        <a href="https://github.com/yt6363" target="_blank">
             <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
         </a>
         <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
@@ -106,14 +116,14 @@ if selected_page == "About Me":
     </div>
     """, unsafe_allow_html=True)
 
-elif selected_page == "Resume":
+elif current_page == "resume":
     resume()
 
-elif selected_page == "Experience":
+elif current_page == "experience":
     experience()
 
-elif selected_page == "Projects":
+elif current_page == "projects":
     projects()
 
-elif selected_page == "Contact":
+elif current_page == "contact":
     contact()
