@@ -29,9 +29,9 @@ st.markdown("""
     .topnav a {
         color: #333333;
         text-align: center;
-        padding: 0 16px;
+        padding: 0 26px;
         text-decoration: none;
-        font-size: 27px;
+        font-size: 22px;
         font-weight: 500;
     }
 
