@@ -1,0 +1,14 @@
+name: Keep Streamlit App Alive
+
+on:
+  push:  # This will trigger when you push to your repository
+  schedule:
+    - cron: '*/15 * * * *'  # Runs every 15 minutes
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP request to Streamlit app
+        run: |
+          curl -m 5 https://yashwanthtatineni.streamlit.app/ || echo "App might be down"
