@@ -86,7 +86,6 @@ def experience():
     cols = st.columns(2)
     for idx, exp in enumerate(experience_entries):
         col = cols[idx % 2]  # Alternates between columns
-
         with col:
             # Company logo and name
             st.markdown(
