@@ -9,7 +9,7 @@ def Certifications():
 
     # Header for ongoing certifications
     st.markdown(
-        "<p style='text-align: center;'>"
+        "<p style='text-align: center; font-size: 16px;'>"
         "PMI CAPM (Certified Associate in Project Management) (Ongoing), "
         "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited) (In-Progress)"
         "</p>",
@@ -52,7 +52,7 @@ def Certifications():
         }
     ]
 
-    # Render each certification entry in a clean format
+    # Render each certification entry without extra div tags or shadows
     for cert in certifications_list:
         # Build the certification display card
         st.markdown(
