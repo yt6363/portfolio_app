@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import fitz  # PyMuPDF
+import base64
 
 def resume():
     st.header("")
@@ -38,11 +39,14 @@ def resume():
                     image = page.get_pixmap(matrix=matrix)
                     img_bytes = image.tobytes(output="png")
 
+                    # Convert image bytes to base64
+                    img_base64 = base64.b64encode(img_bytes).decode()
+
                     # Display image of the page in Streamlit with improved styling for mobile
                     st.markdown(
                         f"""
                         <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="data:image/png;base64,{img_bytes.decode()}" 
+                            <img src="data:image/png;base64,{img_base64}" 
                                  style="width: 90%; max-width: 800px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);" />
                             <p style="font-size: 14px;">Page {page_number + 1}</p>
                         </div>
