@@ -4,6 +4,7 @@ from resume_page import resume
 from experience_page import experience
 from projects_page import projects
 from contact_page import contact
+from certifications_page import certifications
 import base64
 
 # Page setup
@@ -109,13 +110,15 @@ st.markdown("""
         <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
         <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
         <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
+        <a href="?page=certifications" target="_self" class="{active_certifications}">certifications</a>
     </div>
 """.format(
     active_about='active' if selected_page == 'about' else '',
     active_resume='active' if selected_page == 'resume' else '',
     active_experience='active' if selected_page == 'experience' else '',
     active_projects='active' if selected_page == 'projects' else '',
-    active_contact='active' if selected_page == 'contact' else ''
+    active_contact='active' if selected_page == 'contact' else '',
+    active_certifications='active' if selected_page == 'certifications' else ''
 ), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
@@ -193,5 +196,8 @@ elif selected_page == "projects":
 
 elif selected_page == "contact":
     contact()
+
+elif selected_page == "certifications":
+    certifications()
 
 st.markdown('</div>', unsafe_allow_html=True)
