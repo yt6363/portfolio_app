@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Set default text size in session state if not already defined
+# Initialize text_size in session_state if not already defined
 if 'text_size' not in st.session_state:
     st.session_state['text_size'] = 16  # Default size of 16 pixels
 
