@@ -1,45 +1,47 @@
 import streamlit as st
 
 def projects():
-    # Custom CSS for ordered list styling and card formatting
+    # Custom CSS for project card and styling
     st.markdown("""
         <style>
         /* Card container styling */
         .project-card {
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 15px;
             background-color: #ffffff;
             border-radius: 10px;
+            border: 1px solid #e0e0e0; /* Light border to define each card */
         }
 
         /* Project title styling */
         .project-title {
             color: #2b6cb0;
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
         /* Project list styling */
         .project-list {
             color: #4a5568;
-            font-size: 15px;
-            line-height: 1.4;
+            font-size: 14px;
+            line-height: 1.3;
             margin-left: 20px;
             padding-left: 20px;
+            margin-top: 10px;
         }
 
         /* Mobile-specific styling for compactness */
         @media only screen and (max-width: 768px) {
             .project-card {
-                padding: 10px;
-                margin-bottom: 15px;
+                padding: 8px;
+                margin-bottom: 10px;
             }
             .project-title {
                 font-size: 18px;
             }
             .project-list {
-                font-size: 14px;
-                line-height: 1.3;
+                font-size: 13px;
+                line-height: 1.2;
             }
         }
         </style>
@@ -103,7 +105,7 @@ def projects():
         }
     ]
 
-    # Render each project entry in a card format without box shadow
+    # Render each project entry in a card format without box shadows
     for project in project_entries:
         st.markdown(
             f"""
