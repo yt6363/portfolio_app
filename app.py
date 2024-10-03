@@ -110,7 +110,7 @@ st.markdown("""
         <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
         <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
         <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
-        <a href="?page=certifications" target="_self" class="{active_certifications}">certifications</a>
+        <a href="?page=Certifications" target="_self" class="{active_certifications}">Certifications</a>
     </div>
 """.format(
     active_about='active' if selected_page == 'about' else '',
