@@ -20,7 +20,20 @@ def experience():
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
-        
+        {
+            "company": "Bharat Electronics Limited",
+            "role": [{"title": "Overview Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
+            "location": "📍 Bengaluru, Karnataka, India",
+            "description": """
+                <ul>
+                    <li>Worked in a government-owned organization specializing in avionics and electronic warfare.</li>
+                    <li>Took responsibility for product management, focusing on the product life cycle of RWR (Radio warning receiver).</li>
+                    <li>Performed quality testing and operated THV (temperature, humidity, and vibration) chamber.</li>
+                </ul>
+            """,
+            "skills": ["Power Electronics Design", "Product Management"],
+            "logo": "https://media.licdn.com/dms/image/v2/D560BAQEoT1DsKihRxQ/company-logo_100_100/company-logo_100_100/0/1725596070207/bharat_electronics_limited_logo?e=1735776000&v=beta&t=j77_3BJFaVrjoJ-eUh96puYmDlvvMnwvEyw-gisX1SI"
+        },
         {
             "company": "Incredible India Projects Pvt Ltd.",
             "role": [{"title": "Marketing Operations Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
@@ -50,20 +63,7 @@ def experience():
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
-        {
-            "company": "Bharat Electronics Limited",
-            "role": [{"title": "Overview Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
-            "location": "📍 Bengaluru, Karnataka, India",
-            "description": """
-                <ul>
-                    <li>Worked in a government-owned organization specializing in avionics and electronic warfare.</li>
-                    <li>Took responsibility for product management, focusing on the product life cycle of RWR (Radio warning receiver).</li>
-                    <li>Performed quality testing and operated THV (temperature, humidity, and vibration) chamber.</li>
-                </ul>
-            """,
-            "skills": ["Power Electronics Design", "Product Management"],
-            "logo": "https://media.licdn.com/dms/image/v2/D560BAQEoT1DsKihRxQ/company-logo_100_100/company-logo_100_100/0/1725596070207/bharat_electronics_limited_logo?e=1735776000&v=beta&t=j77_3BJFaVrjoJ-eUh96puYmDlvvMnwvEyw-gisX1SI"
-        },
+        
         {
             "company": "New Tech Transformers Pvt Ltd.",
             "role": [{"title": "Quality and Project Management Intern", "duration": "May 2021 - Aug 2021", "details": "Hybrid"}],
