@@ -16,6 +16,13 @@ st.set_page_config(
 # Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
     <style>
+    /* Set viewport scaling for mobile devices to prevent zoom issues */
+    @media only screen and (max-width: 768px) {
+        html {
+            zoom: 0.4; /* Apply 40% zoom for mobile to simulate desktop view */
+        }
+    }
+
     /* Top Navigation Bar Styling */
     .topnav {
         background-color: #ffffff;
@@ -46,19 +53,9 @@ st.markdown("""
     /* Custom CSS for content section */
     .content {
         margin-top: 20px; /* Ensure content is not overlapped by navigation */
-        min-width: 1200px; /* Force content to render as a desktop width */
-    }
-
-    /* Responsive styling to maintain desktop-like view */
-    @media only screen and (max-width: 768px) {
-        .stApp {
-            min-width: 1200px; /* Force desktop width */
-        }
-
-        .profile-img {
-            width: 150px !important;
-            height: 150px !important;
-        }
+        max-width: 1200px; /* Set maximum width for consistent desktop-like appearance */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Circular profile image styling */
