@@ -1,25 +1,23 @@
 import streamlit as st
 
 def Certifications():
+    # Page header
     st.markdown(
         "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Certifications</h1>",
         unsafe_allow_html=True
     )
 
+    # Header for ongoing certifications
+    st.markdown(
+        "<p style='text-align: center;'>"
+        "PMI CAPM (Certified Associate in Project Management) (Ongoing), "
+        "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited) (In-Progress)"
+        "</p>",
+        unsafe_allow_html=True
+    )
+
     # List of certification entries
     certifications_list = [
-        {
-            "title": "PMI CAPM (Certified Associate in Project Management)",
-            "issuer": "PMI",
-            "issued_date": "Ongoing",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/8/81/Project_Management_Institute_logo.svg"
-        },
-        {
-            "title": "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited)",
-            "issuer": "AIGPE",
-            "issued_date": "In-Progress",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Six_sigma_logo.png"
-        },
         {
             "title": "Microsoft Project: MS Project 2021 2019 2016 Complete - 8 PDUs",
             "issuer": "Udemy",
@@ -54,11 +52,12 @@ def Certifications():
         }
     ]
 
-    # Render each certification entry
+    # Render each certification entry in a clean format
     for cert in certifications_list:
+        # Build the certification display card
         st.markdown(
             f"""
-            <div style="display: flex; align-items: center; padding: 10px; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; padding: 10px 0;">
                 <img src="{cert['logo']}" style="width: 50px; height: 50px; margin-right: 15px;">
                 <div style="flex-grow: 1;">
                     <h4 style="margin: 0; color: #2b6cb0;">{cert['title']}</h4>
