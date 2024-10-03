@@ -13,9 +13,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for general app styling, top navigation bar, and zoom for mobile
+# Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
     <style>
+    /* General reset */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     /* Top Navigation Bar Styling */
     .topnav {
         background-color: #ffffff;
@@ -45,13 +51,48 @@ st.markdown("""
 
     /* Custom CSS for content section */
     .content {
-        margin-top: 20px;
+        margin-top: 20px; /* Ensure content is not overlapped by navigation */
     }
 
-    /* Apply default zoom level for mobile devices */
-    @media only screen and (max-width: 768px) {
-        html {
-            zoom: 0.01;
+    /* Responsive styling for smaller screens */
+    @media screen and (max-width: 768px) {
+        .topnav {
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .topnav a {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .profile-img {
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+        .profile-container {
+            flex-direction: column;
+        }
+
+        .text-container {
+            text-align: center;
+            max-width: 100%;
+            margin-left: 0;
+            font-size: 16px;
+        }
+
+        .topnav {
+            padding: 0;
+        }
+
+        .topnav a {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+
+        .profile-container {
+            margin-top: 20px;
         }
     }
     </style>
