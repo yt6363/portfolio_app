@@ -28,15 +28,15 @@ st.markdown("""
         overflow: hidden;
         display: flex;
         justify-content: center;
-        padding: 4px 50px;
+        padding: 4px 20px;
     }
 
     .topnav a {
         color: #333333;
         text-align: center;
-        padding: 0 26px;
+        padding: 0 15px;
         text-decoration: none;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 500;
     }
 
@@ -63,7 +63,7 @@ st.markdown("""
 
         .topnav a {
             font-size: 20px;
-            padding: 10px 0;
+            padding: 8px 0;
         }
 
         .profile-img {
@@ -86,14 +86,9 @@ st.markdown("""
             margin-top: 20px;
         }
 
-        /* Adjusting the general container for mobile view */
+        /* General container for mobile view */
         .stApp {
-            zoom: 85%; /* Helps in shrinking content for better mobile viewing */
-        }
-
-        .content {
-            margin: 10px;
-            padding: 10px;
+            padding: 0 15px;
         }
     }
     </style>
@@ -139,8 +134,8 @@ def add_profile_image(image_path, width):
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
+            gap: 20px;
+            margin-top: 30px;
         }}
         .text-container {{
             max-width: 600px;
@@ -151,8 +146,8 @@ def add_profile_image(image_path, width):
         <div class="profile-container">
             <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
-                <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
-                <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
+                <h2 style="font-size:32px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
+                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px; font-size: 18px;">
                     👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
@@ -167,7 +162,7 @@ def add_profile_image(image_path, width):
 st.markdown('<div class="content">', unsafe_allow_html=True)
 
 if selected_page == "about":
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=200)
     st.markdown("""
         <div style="text-align: center; margin-top: 20px;">
             <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
