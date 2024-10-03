@@ -7,16 +7,16 @@ def projects():
         /* Card container styling */
         .project-card {
             padding: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             background-color: #ffffff;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid #e0e0e0; /* Light border to define each card */
         }
 
         /* Project title styling */
         .project-title {
             color: #2b6cb0;
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 5px;
         }
 
@@ -24,10 +24,15 @@ def projects():
         .project-list {
             color: #4a5568;
             font-size: 14px;
-            line-height: 1.3;
+            line-height: 1.2;
             margin-left: 20px;
             padding-left: 20px;
-            margin-top: 10px;
+            list-style-type: decimal; /* Standard numbering for clarity */
+        }
+
+        /* Adjustments for ordered list to reduce the size of numbers */
+        .project-list li {
+            margin-bottom: 5px;
         }
 
         /* Mobile-specific styling for compactness */
@@ -38,10 +43,16 @@ def projects():
             }
             .project-title {
                 font-size: 18px;
+                text-align: center; /* Better centered alignment on mobile */
             }
             .project-list {
-                font-size: 13px;
-                line-height: 1.2;
+                font-size: 12px; /* Smaller font size for better compact view */
+                line-height: 1.1;
+                margin-left: 15px;
+                padding-left: 15px;
+            }
+            .project-list li {
+                margin-bottom: 3px; /* Reduce spacing between list items */
             }
         }
         </style>
@@ -105,7 +116,7 @@ def projects():
         }
     ]
 
-    # Render each project entry in a card format without box shadows
+    # Render each project entry in a card format
     for project in project_entries:
         st.markdown(
             f"""
