@@ -4,7 +4,7 @@ from resume_page import resume
 from experience_page import experience
 from projects_page import projects
 from contact_page import contact
-from certifications_page import certifications
+from certifications_page import Certifications
 import base64
 
 # Page setup
