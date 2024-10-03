@@ -16,13 +16,6 @@ st.set_page_config(
 # Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
     <style>
-    /* Set viewport scaling for mobile devices to prevent zoom issues */
-    @media only screen and (max-width: 768px) {
-        html {
-            zoom: 0.4; /* Apply 40% zoom for mobile to simulate desktop view */
-        }
-    }
-
     /* Top Navigation Bar Styling */
     .topnav {
         background-color: #ffffff;
@@ -53,34 +46,44 @@ st.markdown("""
     /* Custom CSS for content section */
     .content {
         margin-top: 20px; /* Ensure content is not overlapped by navigation */
-        max-width: 1200px; /* Set maximum width for consistent desktop-like appearance */
-        margin-left: auto;
-        margin-right: auto;
     }
 
-    /* Circular profile image styling */
+    /* Force desktop width for mobile to improve layout consistency */
+    @media only screen and (max-width: 768px) {
+        .stApp {
+            zoom: 0.4; /* Apply a zoom-out effect on mobile devices */
+            min-width: 1200px; /* Force the content width to be like desktop */
+            overflow-x: scroll; /* Allow horizontal scrolling if necessary */
+        }
+
+        .topnav {
+            font-size: 18px; /* Adjust the navigation font size for mobile */
+            padding: 10px 20px;
+        }
+
+        .topnav a {
+            padding: 0 15px;
+        }
+    }
+
+    /* Profile Image CSS for better mobile rendering */
     .profile-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 6px solid #FF4B4B;
+        width: 150px !important;
+        height: 150px !important;
     }
 
-    /* Profile container styling */
     .profile-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 50px;
+        flex-direction: column; /* Stack profile elements vertically on mobile */
+        text-align: center;
+    }
+    
+    /* Container for profile text for better alignment on mobile */
+    .text-container {
+        max-width: 800px;
+        margin-left: 0;
+        padding-top: 15px;
     }
 
-    .text-container {
-        max-width: 600px;
-        margin-left: 10px;
-        font-size: 18px;
-    }
     </style>
 """, unsafe_allow_html=True)
 
