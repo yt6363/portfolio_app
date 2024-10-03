@@ -2,32 +2,7 @@ import streamlit as st
 from PIL import Image
 
 def experience():
-    st.markdown("""
-        <style>
-        /* Custom styling for cards */
-        .experience-card {
-            margin: 20px 10px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: none;
-        }
-
-        /* Skills as tags */
-        .skill-tag {
-            background-color: #e0e0e0;
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            display: inline-block;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    # List of experience entries sorted from newest to oldest
+    # List of experience entries
     experience_entries = [
         {
             "company": "Penn State Harrisburg",
@@ -36,9 +11,9 @@ def experience():
             ],
             "description": """
                 <ul>
-                    <li>Assist faculty in special projects.</li>
-                    <li>Laboratory instruction.</li>
-                    <li>Grading assignments for 140 undergraduate students.</li>
+                    <li>Assist faculty in special projects</li>
+                    <li>Laboratory instruction</li>
+                    <li>Grading assignments for 140 undergraduate students</li>
                 </ul>
             """,
             "location": "📍 Pennsylvania, United States",
@@ -66,9 +41,9 @@ def experience():
             "location": "📍 Hyderabad, Telangana, India",
             "description": """
                 <ul>
-                    <li>Developed standards and processes for marketing operations, including 15 templates and workflows.</li>
-                    <li>Assisted project managers with risk logs, project status, and resource scheduling for 10 projects and a team of 25.</li>
-                    <li>Managed and updated the CRM with 500+ client records with their property listings.</li>
+                    <li>Develop standards and processes for marketing operations, including 15 templates and workflows.</li>
+                    <li>Assist project managers with risk logs, project status, and resource scheduling for 10 projects and a team of 25.</li>
+                    <li>Manage and update the CRM with 500+ client records with their property listings.</li>
                 </ul>
             """,
             "skills": ["Quality Management", "Microsoft Excel"],
@@ -106,37 +81,33 @@ def experience():
         }
     ]
 
-    # Display the experiences in a two-column layout for desktop
-    columns = st.columns(2)
-    for index, exp in enumerate(experience_entries):
-        with columns[index % 2]:
-            # Card container for each experience
-            st.markdown("<div class='experience-card'>", unsafe_allow_html=True)
+    # Render each experience entry in a two-column layout
+    cols = st.columns(2)
+    for idx, exp in enumerate(experience_entries):
+        col = cols[idx % 2]  # Alternates between columns
 
+        with col:
             # Company logo and name
-            cols = st.columns([0.5, 9.5])
-            with cols[0]:
-                if exp["logo"]:
-                    st.image(exp["logo"], width=60, use_column_width=False)
-            with cols[1]:
-                st.markdown(f"<h3 style='color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
-                st.markdown(f"<p style='font-size: 13px; color: #6c757d;'>{exp['location']}</p>", unsafe_allow_html=True)
-
-            # Role and description
-            for role in exp["role"]:
-                st.markdown(f"<h5 style='color: #333;'>{role['title']}</h5>", unsafe_allow_html=True)
-                st.markdown(f"<p style='font-size: 13px; color: #6c757d;'>{role['duration']} | {role['details']}</p>", unsafe_allow_html=True)
-
-            # Description of duties
-            st.markdown(f"<div>{exp['description']}</div>", unsafe_allow_html=True)
-
-            # Skills as tags
-            if "skills" in exp:
-                skill_tags = "".join([f"<span class='skill-tag'>{skill}</span>" for skill in exp["skills"]])
-                st.markdown(f"<div style='margin-top: 5px;'>{skill_tags}</div>", unsafe_allow_html=True)
-
-            # Close card container
-            st.markdown("</div>", unsafe_allow_html=True)
+            st.markdown(
+                f"""
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="{exp['logo']}" style="width: 60px; height: 60px;"/>
+                        <div>
+                            <h3 style="margin: 0; color: #2b6cb0;">{exp['company']}</h3>
+                            <p style="font-size: 13px; color: #6c757d; margin: 0;">{exp['location']}</p>
+                        </div>
+                    </div>
+                    <h5 style="color: #333; margin: 10px 0;">{exp['role'][0]['title']}</h5>
+                    <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']} | {exp['role'][0]['details']}</p>
+                    <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>
+                    <div style="margin-top: 10px;">
+                        {" ".join([f"<span style='background-color: #e0e0e0; color: #333; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; display: inline-block;'>{skill}</span>" for skill in exp['skills']])}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
 # Call the function to render the experience page
 if __name__ == "__main__":
