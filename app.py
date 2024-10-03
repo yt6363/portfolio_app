@@ -56,6 +56,10 @@ st.markdown("""
 
     /* Responsive styling for smaller screens */
     @media screen and (max-width: 768px) {
+        body {
+            zoom: 0.4; /* Zoom out for better view on smaller devices */
+        }
+
         .topnav {
             flex-direction: column;
             padding: 10px;
@@ -82,17 +86,13 @@ st.markdown("""
             font-size: 16px;
         }
 
-        .topnav {
-            padding: 0;
+        .profile-container {
+            margin-top: 20px;
         }
 
         .topnav a {
             font-size: 20px;
             padding: 10px 20px;
-        }
-
-        .profile-container {
-            margin-top: 20px;
         }
     }
     </style>
