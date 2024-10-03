@@ -20,7 +20,7 @@ st.markdown("""
     /* Set viewport scaling for mobile devices to prevent zoom issues */
     @media only screen and (max-width: 768px) {
         html {
-            zoom: 0.004; /* Apply 40% zoom for mobile to simulate desktop view */
+            zoom: 0.1; /* Apply 40% zoom for mobile to simulate desktop view */
         }
     }
 
