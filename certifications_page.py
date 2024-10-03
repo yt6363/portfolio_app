@@ -1,8 +1,9 @@
 import streamlit as st
 
-# Initialize text_size in session_state if not already defined
-if 'text_size' not in st.session_state:
-    st.session_state['text_size'] = 16  # Default size of 16 pixels
+# Function to initialize the text size if it is not in session_state
+def initialize_text_size():
+    if 'text_size' not in st.session_state:
+        st.session_state['text_size'] = 16  # Default value for text size
 
 # Function to increase text size
 def increase_text_size():
@@ -18,7 +19,10 @@ def decrease_text_size():
 st.sidebar.button("Increase Text Size", on_click=increase_text_size)
 st.sidebar.button("Decrease Text Size", on_click=decrease_text_size)
 
+# Certifications function with updated text size handling
 def Certifications():
+    initialize_text_size()  # Initialize the text size if not already done
+
     # Page header
     st.markdown(
         f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'>Certifications</h1>",
