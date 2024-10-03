@@ -54,7 +54,7 @@ def projects():
             "title": "Streamlit Web Application for Data Calculators",
             "description": """
                 <ol style="color: #4a5568;">
-                    <li>Built an interactive data application using <strong>Streamlit</strong>.</li>
+                    <li>Built an interactive data application using Streamlit.</li>
                     <li>Utilized Python for backend calculations.</li>
                     <li>Deployed the app on Streamlit Sharing, showcasing skills in deployment and continuous integration.</li>
                     <li>Developed models and calculators based on Gann and Astronomy Methodologies for financial and astronomical analysis.</li>
