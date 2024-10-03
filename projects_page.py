@@ -35,7 +35,7 @@ def projects():
                 <ol style="color: #4a5568;">
                     <li>Excelled in project management, leading the design-to-manufacturing lifecycle of a high-quality dripper on time.</li>
                     <li>Demonstrated product management expertise by engineering a micro-irrigation dripper tailored to agricultural needs.</li>
-                    <li>Employed <strong>Primavera P6</strong> for superior project timeline coordination and task execution.</li>
+                    <li>Employed Primavera P6 for superior project timeline coordination and task execution.</li>
                 </ol>
             """
         },
@@ -45,7 +45,7 @@ def projects():
                 <ol style="color: #4a5568;">
                     <li>Oversaw Keurig Dr. Pepper's alcoholic beverage project, blending project and marketing management.</li>
                     <li>Conducted detailed market analysis, informing strategic direction and partnership selection.</li>
-                    <li>Utilized <strong>Primavera P6</strong> for meticulous project timeline management.</li>
+                    <li>Utilized Primavera P6 for meticulous project timeline management.</li>
                     <li>Crafted and deployed a marketing plan, aligning with consumer trends and business goals.</li>
                 </ol>
             """
@@ -55,11 +55,11 @@ def projects():
             "description": """
                 <ol style="color: #4a5568;">
                     <li>Built an interactive data application using <strong>Streamlit</strong>.</li>
-                    <li>Utilized <strong>Python</strong> for backend calculations.</li>
-                    <li>Deployed the app on <strong>Streamlit Sharing</strong>, showcasing skills in deployment and continuous integration.</li>
-                    <li>Developed models and calculators based on <strong>Gann</strong> and <strong>Astronomy Methodologies</strong> for financial and astronomical analysis.</li>
-                    <li>Implemented features such as <strong>stock price calculators</strong>, <strong>planetary ingress date generators</strong>, and <strong>gravitational plotter</strong>.</li>
-                    <li>Technologies used: <strong>Streamlit</strong>, <strong>Matplotlib</strong>, <strong>Plotly</strong>, <strong>SQL</strong>, <strong>Git/GitHub</strong>, and <strong>Vercel</strong>.</li>
+                    <li>Utilized Python for backend calculations.</li>
+                    <li>Deployed the app on Streamlit Sharing, showcasing skills in deployment and continuous integration.</li>
+                    <li>Developed models and calculators based on Gann and Astronomy Methodologies for financial and astronomical analysis.</li>
+                    <li>Implemented features such as stock price calculators, planetary ingress date generators, and gravitational plotter.</li>
+                    <li>Technologies used: Streamlit, Matplotlib, Plotly, SQL, Git/GitHub, and Vercel.</li>
                 </ol>
             """
         }
