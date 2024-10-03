@@ -56,23 +56,19 @@ st.markdown("""
 
     /* Responsive styling for smaller screens */
     @media screen and (max-width: 768px) {
-        body {
-            zoom: 0.04; /* Zoom out for better view on smaller devices */
-        }
-
         .topnav {
             flex-direction: column;
             padding: 10px;
         }
 
         .topnav a {
-            font-size: 18px;
-            padding: 10px;
+            font-size: 20px;
+            padding: 10px 0;
         }
 
         .profile-img {
-            width: 150px !important;
-            height: 150px !important;
+            width: 120px !important;
+            height: 120px !important;
         }
 
         .profile-container {
@@ -81,7 +77,7 @@ st.markdown("""
 
         .text-container {
             text-align: center;
-            max-width: 100%;
+            max-width: 90%;
             margin-left: 0;
             font-size: 16px;
         }
@@ -90,9 +86,14 @@ st.markdown("""
             margin-top: 20px;
         }
 
-        .topnav a {
-            font-size: 20px;
-            padding: 10px 20px;
+        /* Adjusting the general container for mobile view */
+        .stApp {
+            zoom: 85%; /* Helps in shrinking content for better mobile viewing */
+        }
+
+        .content {
+            margin: 10px;
+            padding: 10px;
         }
     }
     </style>
