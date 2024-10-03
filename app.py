@@ -118,7 +118,7 @@ st.markdown("""
     active_experience='active' if selected_page == 'experience' else '',
     active_projects='active' if selected_page == 'projects' else '',
     active_contact='active' if selected_page == 'contact' else '',
-    active_certifications='active' if selected_page == 'certifications' else ''
+    active_certifications='active' if selected_page == 'Certifications' else ''
 ), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
@@ -197,7 +197,7 @@ elif selected_page == "projects":
 elif selected_page == "contact":
     contact()
 
-elif selected_page == "certifications":
+elif selected_page == "Certifications":
     certifications()
 
 st.markdown('</div>', unsafe_allow_html=True)
