@@ -1,9 +1,27 @@
 import streamlit as st
 
+# Set default text size in session state if not already defined
+if 'text_size' not in st.session_state:
+    st.session_state['text_size'] = 16  # Default size of 16 pixels
+
+# Function to increase text size
+def increase_text_size():
+    if st.session_state['text_size'] < 24:  # Set an upper limit for text size
+        st.session_state['text_size'] += 2
+
+# Function to decrease text size
+def decrease_text_size():
+    if st.session_state['text_size'] > 10:  # Set a lower limit for text size
+        st.session_state['text_size'] -= 2
+
+# Buttons to increase or decrease the text size
+st.sidebar.button("Increase Text Size", on_click=increase_text_size)
+st.sidebar.button("Decrease Text Size", on_click=decrease_text_size)
+
 def Certifications():
     # Page header
     st.markdown(
-        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Certifications</h1>",
+        f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'>Certifications</h1>",
         unsafe_allow_html=True
     )
 
@@ -48,14 +66,14 @@ def Certifications():
         }
     ]
 
-    # Render each certification entry
+    # Render each certification entry with dynamic font size
     for cert in certifications_list:
         st.markdown(
             f"""
             <div style="margin-bottom: 20px;">
-                <h3 style="color: #2b6cb0;">{cert['title']}</h3>
-                <p style="font-size: 14px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                {"<p style='font-size: 12px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
+                <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
+                <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
+                {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
             </div>
             """,
             unsafe_allow_html=True
