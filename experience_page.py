@@ -20,6 +20,21 @@ def experience():
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
+        
+        {
+            "company": "Incredible India Projects Pvt Ltd.",
+            "role": [{"title": "Marketing Operations Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
+            "location": "📍 Hyderabad, Telangana, India",
+            "description": """
+                <ul>
+                    <li>Develop standards and processes for marketing operations, including 15 templates and workflows.</li>
+                    <li>Assist project managers with risk logs, project status, and resource scheduling for 10 projects and a team of 25.</li>
+                    <li>Manage and update the CRM with 500+ client records with their property listings.</li>
+                </ul>
+            """,
+            "skills": ["Quality Management", "Microsoft Excel"],
+            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
+        },
         {
             "company": "Penn State Harrisburg",
             "role": [
@@ -34,20 +49,6 @@ def experience():
             "location": "📍 Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
-        },
-        {
-            "company": "Incredible India Projects Pvt Ltd.",
-            "role": [{"title": "Marketing Operations Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
-            "location": "📍 Hyderabad, Telangana, India",
-            "description": """
-                <ul>
-                    <li>Develop standards and processes for marketing operations, including 15 templates and workflows.</li>
-                    <li>Assist project managers with risk logs, project status, and resource scheduling for 10 projects and a team of 25.</li>
-                    <li>Manage and update the CRM with 500+ client records with their property listings.</li>
-                </ul>
-            """,
-            "skills": ["Quality Management", "Microsoft Excel"],
-            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
         },
         {
             "company": "Bharat Electronics Limited",
