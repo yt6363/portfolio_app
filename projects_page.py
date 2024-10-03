@@ -70,7 +70,7 @@ def projects():
         st.markdown(
             """
             <div style="
-                padding: 15px; 
+                padding: 10px; 
                 margin-bottom: 15px; 
                 background-color: #ffffff;
                 border-radius: 10px;
