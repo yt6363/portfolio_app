@@ -8,7 +8,7 @@ import base64
 
 # Page setup
 st.set_page_config(
-    page_title="T Yashwanth Sai's Portfolio",
+    page_title="Yashwanth Tatineni's Portfolio",
     page_icon="👤",
     layout="wide",
     initial_sidebar_state="expanded"
