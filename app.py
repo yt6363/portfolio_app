@@ -8,7 +8,7 @@ import base64
 
 # Page setup
 st.set_page_config(
-    page_title="Yashwanth Tatineni's Portfolio",
+    page_title="T Yashwanth Sai's Portfolio",
     page_icon="👤",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -17,11 +17,10 @@ st.set_page_config(
 # Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
     <style>
-    /* Set viewport scaling for mobile devices to prevent zoom issues */
-    @media only screen and (max-width: 768px) {
-        html {
-            zoom: 0.10; /* Apply 40% zoom for mobile to simulate desktop view */
-        }
+    /* General reset */
+    body {
+        margin: 0;
+        padding: 0;
     }
 
     /* Top Navigation Bar Styling */
@@ -54,33 +53,48 @@ st.markdown("""
     /* Custom CSS for content section */
     .content {
         margin-top: 20px; /* Ensure content is not overlapped by navigation */
-        max-width: 1200px; /* Set maximum width for consistent desktop-like appearance */
-        margin-left: auto;
-        margin-right: auto;
     }
 
-    /* Circular profile image styling */
-    .profile-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 6px solid #FF4B4B;
-    }
+    /* Responsive styling for smaller screens */
+    @media screen and (max-width: 768px) {
+        body {
+            zoom: 0.4; /* Zoom out for better view on smaller devices */
+        }
 
-    /* Profile container styling */
-    .profile-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 50px;
-    }
+        .topnav {
+            flex-direction: column;
+            padding: 10px;
+        }
 
-    .text-container {
-        max-width: 600px;
-        margin-left: 10px;
-        font-size: 18px;
+        .topnav a {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .profile-img {
+            width: 150px !important;
+            height: 150px !important;
+        }
+
+        .profile-container {
+            flex-direction: column;
+        }
+
+        .text-container {
+            text-align: center;
+            max-width: 100%;
+            margin-left: 0;
+            font-size: 16px;
+        }
+
+        .profile-container {
+            margin-top: 20px;
+        }
+
+        .topnav a {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
     }
     </style>
 """, unsafe_allow_html=True)
@@ -113,6 +127,27 @@ def add_profile_image(image_path, width):
 
     # Render circular image using CSS
     st.markdown(f"""
+        <style>
+        .profile-img {{
+            width: {width}px;
+            height: {width}px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #FF4B4B;
+        }}
+        .profile-container {{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }}
+        .text-container {{
+            max-width: 600px;
+            margin-left: 10px;
+            font-size: 18px;
+        }}
+        </style>
         <div class="profile-container">
             <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
