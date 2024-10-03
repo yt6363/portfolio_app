@@ -80,11 +80,6 @@ def experience():
             "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
         },
         
-       
-       
-        
-        
-        
     ]
 
     # Render each experience entry in a two-column layout
