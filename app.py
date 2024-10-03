@@ -195,7 +195,7 @@ elif selected_page == "projects":
     projects()
 
 elif selected_page == "Certifications":
-    certifications()
+    Certifications()
 
 elif selected_page == "contact":
     contact()
