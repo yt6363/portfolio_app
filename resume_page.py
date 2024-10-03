@@ -29,8 +29,8 @@ def resume():
                 for page_number in range(num_pages):
                     page = pdf_document.load_page(page_number)
 
-                    # Use a higher scaling factor to improve image quality
-                    zoom_x = 2.0  # Increase to make the resolution higher (2.0 means 200%)
+                    # Use a moderate scaling factor to improve image quality while keeping it manageable
+                    zoom_x = 2.0  # Set zoom for balance between clarity and screen fitting
                     zoom_y = 2.0
                     matrix = fitz.Matrix(zoom_x, zoom_y)
 
@@ -38,10 +38,23 @@ def resume():
                     image = page.get_pixmap(matrix=matrix)
                     img_bytes = image.tobytes(output="png")
 
-                    # Display image of the page in Streamlit
-                    st.image(img_bytes, caption=f"Page {page_number + 1}", use_column_width=True)
+                    # Display image of the page in Streamlit with improved styling for mobile
+                    st.markdown(
+                        f"""
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <img src="data:image/png;base64,{img_bytes.decode()}" 
+                                 style="width: 90%; max-width: 800px; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);" />
+                            <p style="font-size: 14px;">Page {page_number + 1}</p>
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
         except Exception as e:
             st.error("An error occurred while trying to display the resume.")
             st.write(e)
     else:
         st.error("Resume file not found. Please ensure the file is in the correct location.")
+
+# Call the function to render the resume page
+if __name__ == "__main__":
+    resume()
