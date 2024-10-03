@@ -13,9 +13,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom HTML Meta Tag for Forcing Desktop-like View on Mobile
+# Custom CSS for general app styling and top navigation bar styling
 st.markdown("""
-    <meta name="viewport" content="width=1200, initial-scale=0.4, maximum-scale=0.4, user-scalable=no">
     <style>
     /* Top Navigation Bar Styling */
     .topnav {
@@ -23,15 +22,15 @@ st.markdown("""
         overflow: hidden;
         display: flex;
         justify-content: center;
-        padding: 4px 20px;
+        padding: 4px 50px;
     }
 
     .topnav a {
         color: #333333;
         text-align: center;
-        padding: 0 15px;
+        padding: 0 26px;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 500;
     }
 
@@ -60,6 +59,30 @@ st.markdown("""
             width: 150px !important;
             height: 150px !important;
         }
+    }
+
+    /* Circular profile image styling */
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #FF4B4B;
+    }
+
+    /* Profile container styling */
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .text-container {
+        max-width: 600px;
+        margin-left: 10px;
+        font-size: 18px;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -92,32 +115,11 @@ def add_profile_image(image_path, width):
 
     # Render circular image using CSS
     st.markdown(f"""
-        <style>
-        .profile-img {{
-            width: {width}px;
-            height: {width}px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #FF4B4B;
-        }}
-        .profile-container {{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }}
-        .text-container {{
-            max-width: 600px;
-            margin-left: 10px;
-            font-size: 18px;
-        }}
-        </style>
         <div class="profile-container">
             <img class="profile-img" src="data:image/jpeg;base64,{base64_img}">
             <div class="text-container">
-                <h2 style="font-size:32px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
-                <p style="background-color: #ffffff10; padding: 15px; border-radius: 10px; font-size: 18px;">
+                <h2 style="font-size:36px;">"Engineering Solutions, Managing Projects, Delivering Impact."</h2>
+                <p style="background-color: #ffffff10; padding: 20px; border-radius: 10px; font-size: 18px;">
                     👋 Hi, I'm Yashwanth, an engineering management student with hands-on experience in project management, 
                     quality assurance, and data analysis. My expertise spans across industries, where I have optimized workflows, managed timelines, 
                     and conducted in-depth data analysis using SQL and Tableau. With a passion for innovative problem-solving, 
@@ -132,7 +134,7 @@ def add_profile_image(image_path, width):
 st.markdown('<div class="content">', unsafe_allow_html=True)
 
 if selected_page == "about":
-    add_profile_image("Yashwanth sai Tatineni.jpeg", width=200)
+    add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
     st.markdown("""
         <div style="text-align: center; margin-top: 20px;">
             <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
