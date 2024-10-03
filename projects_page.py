@@ -4,13 +4,13 @@ def projects():
     # Custom CSS for project card and styling
     st.markdown("""
         <style>
-        /* Card container styling */
+        /* Remove all box shadows and simplify the card appearance */
         .project-card {
             padding: 10px;
             margin-bottom: 10px;
             background-color: #ffffff;
             border-radius: 8px;
-            border: 1px solid #e0e0e0; /* Light border to define each card */
+            border: none; /* Removed border */
         }
 
         /* Project title styling */
@@ -24,9 +24,9 @@ def projects():
         .project-list {
             color: #4a5568;
             font-size: 14px;
-            line-height: 1.2;
+            line-height: 1.4;
             margin-left: 20px;
-            padding-left: 20px;
+            padding-left: 0; /* Remove default padding for list */
             list-style-type: decimal; /* Standard numbering for clarity */
         }
 
@@ -47,7 +47,7 @@ def projects():
             }
             .project-list {
                 font-size: 12px; /* Smaller font size for better compact view */
-                line-height: 1.1;
+                line-height: 1.2;
                 margin-left: 15px;
                 padding-left: 15px;
             }
