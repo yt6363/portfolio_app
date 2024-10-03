@@ -12,7 +12,7 @@ def Certifications():
             "title": "PMI CAPM (Certified Associate in Project Management)",
             "issuer": "PMI",
             "issued_date": "Ongoing",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Project_Management_Institute_logo.svg/1024px-Project_Management_Institute_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/8/81/Project_Management_Institute_logo.svg"
         },
         {
             "title": "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited)",
@@ -32,7 +32,7 @@ def Certifications():
             "issuer": "CITI Program",
             "issued_date": "Sep 2024",
             "credential_id": "53395239",
-            "logo": "https://www.citiprogram.org/media/logo.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/en/2/2d/CITI_Program_Logo.png"
         },
         {
             "title": "Advertising on LinkedIn",
@@ -50,24 +50,15 @@ def Certifications():
             "title": "Foundations of Project Management",
             "issuer": "Google",
             "issued_date": "Sep 2023",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_of_Google_%282013-2015%29.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
         }
     ]
 
-    # Render each certification entry in a structured layout
+    # Render each certification entry in a clean, list-style format without box shadows
     for cert in certifications_list:
         st.markdown(
             f"""
-            <div style="
-                display: flex; 
-                align-items: center; 
-                padding: 15px; 
-                margin-bottom: 15px; 
-                background-color: #ffffff; 
-                border-radius: 10px;
-                border: 1px solid #e0e0e0;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-            ">
+            <div style="display: flex; align-items: center; padding: 10px; margin-bottom: 10px;">
                 <img src="{cert['logo']}" style="width: 50px; height: 50px; margin-right: 15px;">
                 <div>
                     <h4 style="margin: 0; color: #2b6cb0;">{cert['title']}</h4>
