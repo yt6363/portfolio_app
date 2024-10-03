@@ -95,12 +95,14 @@ def projects():
             ]
         },
         {
-            "title": "Keurig Dr. Pepper's Alcoholic Beverage Project",
+            "title": "Personal Portfolio Web Application",
             "description": [
-                "Oversaw Keurig Dr. Pepper's alcoholic beverage project, blending project and marketing management.",
-                "Conducted detailed market analysis, informing strategic direction and partnership selection.",
-                "Utilized Primavera P6 for meticulous project timeline management.",
-                "Crafted and deployed a marketing plan, aligning with consumer trends and business goals."
+                  "Developed a responsive, interactive portfolio application using Streamlit to showcase experience, projects, resume, and contact information.",
+                  "Designed and implemented a top navigation bar and a two-column layout for experience and project sections to create a structured and user-friendly interface.",
+                  "Optimized the app for both desktop and mobile viewing, addressing zoom levels and rendering issues.",
+                  "Integrated a contact form using Formspree for easy communication.",
+                  "Added features like PDF resume preview and download, utilizing high-resolution image rendering for text clarity.",
+                  "Utilized custom CSS for styling to give a sleek and modern user experience."
             ]
         },
         {
