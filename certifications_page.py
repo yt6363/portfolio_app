@@ -54,13 +54,13 @@ def Certifications():
         }
     ]
 
-    # Render each certification entry in a clean, list-style format without box shadows
+    # Render each certification entry
     for cert in certifications_list:
         st.markdown(
             f"""
             <div style="display: flex; align-items: center; padding: 10px; margin-bottom: 10px;">
                 <img src="{cert['logo']}" style="width: 50px; height: 50px; margin-right: 15px;">
-                <div>
+                <div style="flex-grow: 1;">
                     <h4 style="margin: 0; color: #2b6cb0;">{cert['title']}</h4>
                     <p style="margin: 0; color: #6c757d; font-size: 14px;">{cert['issuer']} - Issued {cert['issued_date']}</p>
                     {"<p style='margin: 0; color: #6c757d; font-size: 12px;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
