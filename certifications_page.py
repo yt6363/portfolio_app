@@ -30,39 +30,46 @@ def Certifications():
         {
             "title": "PMI CAPM (Certified Associate in Project Management)",
             "issuer": "PMI",
-            "issued_date": "Ongoing"
+            "issued_date": "Ongoing",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/PMI_logo.svg/1200px-PMI_logo.svg.png"
         },
         {
             "title": "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited)",
             "issuer": "AIGPE",
-            "issued_date": "In-Progress"
+            "issued_date": "In-Progress",
+            "logo": "https://pbs.twimg.com/profile_images/1366733838995306496/Ttu5tQ39_400x400.jpg"
         },
         {
             "title": "Microsoft Project: MS Project 2021 2019 2016 Complete - 8 PDUs",
             "issuer": "Udemy",
             "issued_date": "Sep 2024",
-            "credential_id": "UC-6abec0b7-e1d4-4999-ae95-12d093a0fe76"
+            "credential_id": "UC-6abec0b7-e1d4-4999-ae95-12d093a0fe76",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Udemy_logo.png"
         },
         {
             "title": "Responsible Conduct of Research (RCR) - Basic",
             "issuer": "CITI Program",
             "issued_date": "Sep 2024",
-            "credential_id": "53395239"
+            "credential_id": "53395239",
+            "logo": "https://www.citiprogram.org/assets/logos/CITI_Program_Logo.png"
         },
         {
             "title": "Advertising on LinkedIn",
             "issuer": "LinkedIn",
-            "issued_date": "May 2024"
+            "issued_date": "May 2024",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
         },
         {
             "title": "How to Generate Marketing Leads with AI",
             "issuer": "LinkedIn",
-            "issued_date": "May 2024"
+            "issued_date": "May 2024",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
         },
         {
             "title": "Foundations of Project Management",
             "issuer": "Google",
-            "issued_date": "Sep 2023"
+            "issued_date": "Sep 2023",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2020_Google.png"
         }
     ]
 
@@ -70,10 +77,13 @@ def Certifications():
     for cert in certifications_list:
         st.markdown(
             f"""
-            <div style="margin-bottom: 20px;">
-                <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
-                <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
+            <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                <img src="{cert['logo']}" style="width: 60px; height: 60px;"/>
+                <div>
+                    <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
+                    <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
+                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
+                </div>
             </div>
             """,
             unsafe_allow_html=True
