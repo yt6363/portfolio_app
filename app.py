@@ -13,13 +13,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for general app styling and top navigation bar styling
+# Custom CSS for forcing desktop view
 st.markdown("""
     <style>
-    /* General reset */
-    body {
-        margin: 0;
-        padding: 0;
+    /* Force the viewport to render as if it's a desktop */
+    @media only screen and (max-width: 768px) {
+        html {
+            zoom: 0.4;  /* Zoom out for mobile devices */
+            overflow: hidden; /* Prevent scrolling */
+        }
     }
 
     /* Top Navigation Bar Styling */
@@ -52,43 +54,18 @@ st.markdown("""
     /* Custom CSS for content section */
     .content {
         margin-top: 20px; /* Ensure content is not overlapped by navigation */
+        min-width: 1200px; /* Force content to render as a desktop width */
     }
 
-    /* Responsive styling for smaller screens */
-    @media screen and (max-width: 768px) {
-        .topnav {
-            flex-direction: column;
-            padding: 10px;
-        }
-
-        .topnav a {
-            font-size: 20px;
-            padding: 8px 0;
+    /* Responsive styling to maintain desktop-like view */
+    @media only screen and (max-width: 768px) {
+        .stApp {
+            min-width: 1200px; /* Force desktop width */
         }
 
         .profile-img {
-            width: 120px !important;
-            height: 120px !important;
-        }
-
-        .profile-container {
-            flex-direction: column;
-        }
-
-        .text-container {
-            text-align: center;
-            max-width: 90%;
-            margin-left: 0;
-            font-size: 16px;
-        }
-
-        .profile-container {
-            margin-top: 20px;
-        }
-
-        /* General container for mobile view */
-        .stApp {
-            padding: 0 15px;
+            width: 150px !important;
+            height: 150px !important;
         }
     }
     </style>
