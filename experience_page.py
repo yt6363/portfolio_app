@@ -1,8 +1,7 @@
 import streamlit as st
-from PIL import Image
 
 def experience():
-    # List of experience entries
+    # List of experience entries, ordered from newest to oldest
     experience_entries = [
         {
             "company": "Penn State Harrisburg",
@@ -11,9 +10,9 @@ def experience():
             ],
             "description": """
                 <ul>
-                    <li>Assist faculty in special projects</li>
-                    <li>Laboratory instruction</li>
-                    <li>Grading assignments for 140 undergraduate students</li>
+                    <li>Assist faculty in special projects.</li>
+                    <li>Laboratory instruction.</li>
+                    <li>Grading assignments for 140 undergraduate students.</li>
                 </ul>
             """,
             "location": "📍 Pennsylvania, United States",
@@ -82,32 +81,44 @@ def experience():
     ]
 
     # Render each experience entry in a two-column layout
-    cols = st.columns(2)
-    for idx, exp in enumerate(experience_entries):
-        col = cols[idx % 2]  # Alternates between columns
+    for i in range(0, len(experience_entries), 2):
+        cols = st.columns(2)
+        for col, exp in zip(cols, experience_entries[i:i+2]):
+            with col:
+                # Company logo and name
+                st.image(exp["logo"], width=60, use_column_width=False)
+                st.markdown(f"<h3 style='margin-bottom: 2px; color: #2b6cb0;'>{exp['company']}</h3>", unsafe_allow_html=True)
+                st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -5px;'>{exp['location']}</p>", unsafe_allow_html=True)
 
-        with col:
-            # Company logo and name
-            st.markdown(
-                f"""
-                <div style="margin-bottom: 20px;">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <img src="{exp['logo']}" style="width: 60px; height: 60px;"/>
-                        <div>
-                            <h3 style="margin: 0; color: #2b6cb0;">{exp['company']}</h3>
-                            <p style="font-size: 13px; color: #6c757d; margin: 0;">{exp['location']}</p>
-                        </div>
-                    </div>
-                    <h5 style="color: #333; margin: 10px 0;">{exp['role'][0]['title']}</h5>
-                    <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']} | {exp['role'][0]['details']}</p>
-                    <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>
-                    <div style="margin-top: 10px;">
-                        {" ".join([f"<span style='background-color: #e0e0e0; color: #333; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; display: inline-block;'>{skill}</span>" for skill in exp['skills']])}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+                # Role entries
+                for role in exp["role"]:
+                    st.markdown(f"<h5 style='color: #333; margin-bottom: 2px;'>{role['title']}</h5>", unsafe_allow_html=True)
+                    st.markdown(f"<p style='font-size: 13px; color: #6c757d; margin-top: -10px;'>{role['duration']} | {role['details']}</p>", unsafe_allow_html=True)
+
+                # Additional Description (Optional)
+                if "description" in exp:
+                    st.markdown(f"<p style='font-size: 13px; color: #4a5568; margin-top: 5px;'>{exp['description']}</p>", unsafe_allow_html=True)
+
+                # Key skills as horizontally aligned tags
+                if "skills" in exp:
+                    tags_html = "<div style='margin-top: 5px; display: flex; flex-wrap: wrap;'>"
+                    for skill in exp["skills"]:
+                        tags_html += f"""
+                        <span style="
+                            background-color: #e0e0e0; 
+                            color: #333; 
+                            padding: 3px 8px; 
+                            border-radius: 5px; 
+                            font-size: 12px;
+                            margin-right: 5px;
+                            margin-bottom: 5px;
+                            display: inline-block;
+                        ">
+                            {skill}
+                        </span>
+                        """
+                    tags_html += "</div>"
+                    st.markdown(tags_html, unsafe_allow_html=True)
 
 # Call the function to render the experience page
 if __name__ == "__main__":
