@@ -3,7 +3,7 @@ import streamlit as st
 def projects():
      # Header for the projects section
     st.markdown(
-        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 8px;'></h1>",
+        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 1px;'></h1>",
         unsafe_allow_html=True
     )
     # Custom CSS for the project section styling
