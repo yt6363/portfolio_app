@@ -3,8 +3,8 @@ import streamlit as st
 from resume_page import resume
 from experience_page import experience
 from projects_page import projects
-from contact_page import contact
 from certifications_page import Certifications
+from contact_page import contact
 import base64
 
 # Page setup
@@ -109,16 +109,16 @@ st.markdown("""
         <a href="?page=resume" target="_self" class="{active_resume}">Resume</a>
         <a href="?page=experience" target="_self" class="{active_experience}">Experience</a>
         <a href="?page=projects" target="_self" class="{active_projects}">Projects</a>
-        <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
         <a href="?page=Certifications" target="_self" class="{active_certifications}">Certifications</a>
+        <a href="?page=contact" target="_self" class="{active_contact}">Contact</a>
     </div>
 """.format(
     active_about='active' if selected_page == 'about' else '',
     active_resume='active' if selected_page == 'resume' else '',
     active_experience='active' if selected_page == 'experience' else '',
     active_projects='active' if selected_page == 'projects' else '',
-    active_contact='active' if selected_page == 'contact' else '',
-    active_certifications='active' if selected_page == 'Certifications' else ''
+    active_certifications='active' if selected_page == 'Certifications' else '',
+    active_contact='active' if selected_page == 'contact' else ''
 ), unsafe_allow_html=True)
 
 # Function to create circular images with custom CSS styling
@@ -194,10 +194,10 @@ elif selected_page == "experience":
 elif selected_page == "projects":
     projects()
 
-elif selected_page == "contact":
-    contact()
-
 elif selected_page == "Certifications":
     certifications()
+
+elif selected_page == "contact":
+    contact()
 
 st.markdown('</div>', unsafe_allow_html=True)
