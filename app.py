@@ -58,7 +58,7 @@ st.markdown("""
     /* Responsive styling for smaller screens */
     @media screen and (max-width: 768px) {
         body {
-            zoom: 0.1; /* Zoom out for better view on smaller devices */
+            zoom: 0.6; /* Zoom out for better view on smaller devices */
         }
 
         .topnav {
