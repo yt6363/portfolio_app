@@ -95,6 +95,15 @@ def projects():
             ]
         },
         {
+            "title": "Keurig Dr. Pepper's Alcoholic Beverage Project",
+            "description": [
+                "Oversaw Keurig Dr. Pepper's alcoholic beverage project, blending project and marketing management.",
+                "Conducted detailed market analysis, informing strategic direction and partnership selection.",
+                "Utilized Primavera P6 for meticulous project timeline management.",
+                "Crafted and deployed a marketing plan, aligning with consumer trends and business goals."
+            ]
+        },
+        {
             "title": "Streamlit Web Application for Data Calculators",
             "description": [
                 "Built an interactive data application using Streamlit.",
