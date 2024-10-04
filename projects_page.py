@@ -116,7 +116,7 @@ def projects():
                 "Utilized custom CSS for styling to give a sleek and modern user experience."
             ],
             "github_link": "https://github.com/yt6363/portfolio_app",
-            "website_link": "https://1133633.streamlit.app/"
+            "website_link": "https://1133633.streamlit.app/",
         },
         {
             "title": "Streamlit Web Application for Data Calculators",
