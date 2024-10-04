@@ -38,10 +38,10 @@ def projects():
         }
 
         /* Link styling */
-        .project-links a {
-            color: #007bff;
-            text-decoration: none;
-            margin-right: 15px;
+        .project-links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
 
         /* Mobile-specific styling for compactness */
@@ -141,8 +141,8 @@ def projects():
                     {''.join([f"<li>{item}</li>" for item in project['description']])}
                 </ul>
                 <div class="project-links">
-                    {"<a href='" + project['github_link'] + "' target='_blank'>GitHub Link</a>" if 'github_link' in project else ""}
-                    {"<a href='" + project['website_link'] + "' target='_blank'>Website Link</a>" if 'website_link' in project else ""}
+                    {"<a href='" + project['github_link'] + "' target='_blank'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>" if 'github_link' in project else ""}
+                    {"<a href='" + project['website_link'] + "' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>" if 'website_link' in project else ""}
                 </div>
             </div>
             """,
