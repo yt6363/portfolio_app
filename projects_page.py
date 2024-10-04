@@ -6,7 +6,7 @@ def projects():
         "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Projects</h1>",
         unsafe_allow_html=True
     )
-    
+
     # Custom CSS for the project section styling
     st.markdown("""
         <style>
@@ -16,6 +16,7 @@ def projects():
             margin-bottom: 20px;
             background-color: #ffffff;
             border-radius: 8px;
+            box-shadow: none;  /* No box shadow */
         }
 
         /* Project title styling */
@@ -36,29 +37,30 @@ def projects():
             margin-bottom: 8px;
         }
 
-        /* Link styling */
-        .project-link {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .project-link img {
-            width: 36px;  /* Increased size for better visibility */
-            height: 36px;
-            vertical-align: middle;
-        }
-
-        /* Align links horizontally */
-        .links-container {
-            margin-top: 10px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        /* Mobile-specific styling for compactness */
+        @media only screen and (max-width: 768px) {
+            .project-card {
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+            .project-title {
+                font-size: 20px;
+                text-align: center;
+            }
+            .project-list {
+                font-size: 14px;
+                line-height: 1.4;
+                margin-left: 15px;
+                padding-left: 15px;
+            }
+            .project-list li {
+                margin-bottom: 5px;
+            }
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # List of project entries with GitHub and website links
+    # List of project entries
     project_entries = [
         {
             "title": "Health Insurance Company Database",
@@ -137,22 +139,24 @@ def projects():
 
         # Add GitHub and Website links if available
         if 'github_link' in project or 'website_link' in project:
-            links_html = "<div class='links-container'>"
+            links_html = """
+            <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
+            """
             
             if 'github_link' in project:
                 links_html += f"""
                 <a href='{project['github_link']}' target='_blank' class='project-link'>
-                    <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'>
+                    <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link' style="width: 36px; height: 36px;">
                 </a>
                 """
-
+            
             if 'website_link' in project:
                 links_html += f"""
                 <a href='{project['website_link']}' target='_blank' class='project-link'>
-                    <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link' style="width: 36px; height: 36px;">
                 </a>
                 """
-
+            
             links_html += "</div>"
             st.markdown(links_html, unsafe_allow_html=True)
 
