@@ -164,7 +164,7 @@ def projects():
         
         if 'website_link' in project:
             link_icons.append(
-                f"<a href='{project['website_link']}' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>"
+                f"<a href='{project['website_link']}' target='_blank'><img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'></a>"
             )
 
         if link_icons:
