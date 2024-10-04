@@ -162,7 +162,7 @@ def projects():
         if 'website_link' in project:
             links_html += f"""
             <a href='{project['website_link']}' target='_blank' class='project-link'>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Internet_Web_Icon.png' alt='Website Link'>
             </a>
             """
         
