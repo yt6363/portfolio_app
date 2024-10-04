@@ -13,7 +13,7 @@ def experience():
         {
             "company": "Penn State Harrisburg",
             "role": [
-                {"title": "Teaching Assistant", "duration": "Jan 2023 - Oct 2023", "details": ""}
+                {"title": "Teaching Assistant", "duration": "Jan 2023 - Present", "details": ""}
             ],
             "description": """
                 <ul>
