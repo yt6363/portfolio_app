@@ -38,8 +38,8 @@ def projects():
 
         /* Link styling */
         .project-link img {
-            width: 24px;
-            height: 24px;
+            width: 32px;  /* Increased size from 24px to 32px */
+            height: 32px;  /* Increased size from 24px to 32px */
             margin-right: 10px;
             vertical-align: middle;
         }
