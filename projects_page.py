@@ -38,7 +38,7 @@ def projects():
 
         /* Link styling */
         .project-link img {
-            width: 32px;  /* Increased size for visibility */
+            width: 32px;  /* Increased size for better visibility */
             height: 32px;
             margin-right: 10px;
             vertical-align: middle;
@@ -48,7 +48,7 @@ def projects():
         .links-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;  /* Space between GitHub and Website logos */
             margin-top: 10px;
         }
         </style>
