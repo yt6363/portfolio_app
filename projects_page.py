@@ -39,19 +39,14 @@ def projects():
 
         /* Link icon styling */
         .link-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            display: inline-block;
             margin-top: 10px;
-        }
-
-        .link-icons a {
-            text-decoration: none;
         }
 
         .link-icons img {
             width: 30px;
             height: 30px;
+            margin-right: 10px;
         }
 
         /* Mobile-specific styling for compactness */
@@ -141,15 +136,15 @@ def projects():
         links_html = "<div class='link-icons'>"
         if 'github_link' in project:
             links_html += f"""
-            <a href='{project['github_link']}' target='_blank' class='project-link'>
+            <a href='{project['github_link']}' target='_blank'>
                 <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'>
             </a>
             """
         
         if 'website_link' in project:
             links_html += f"""
-            <a href='{project['website_link']}' target='_blank' class='project-link'>
-                <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'>
+            <a href='{project['website_link']}' target='_blank'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
             </a>
             """
         
