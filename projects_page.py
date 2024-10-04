@@ -37,6 +37,14 @@ def projects():
             margin-bottom: 8px;
         }
 
+        /* Link icons styling */
+        .link-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
         /* Mobile-specific styling for compactness */
         @media only screen and (max-width: 768px) {
             .project-card {
@@ -138,27 +146,23 @@ def projects():
         )
 
         # Add GitHub and Website links if available
-        if 'github_link' in project or 'website_link' in project:
-            links_html = """
-            <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
+        links_html = "<div class='link-icons'>"
+        if 'github_link' in project:
+            links_html += f"""
+            <a href='{project['github_link']}' target='_blank' class='project-link'>
+                <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link' style="width: 36px; height: 36px;">
+            </a>
             """
-            
-            if 'github_link' in project:
-                links_html += f"""
-                <a href='{project['github_link']}' target='_blank' class='project-link'>
-                    <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link' style="width: 36px; height: 36px;">
-                </a>
-                """
-            
-            if 'website_link' in project:
-                links_html += f"""
-                <a href='{project['website_link']}' target='_blank' class='project-link'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link' style="width: 36px; height: 36px;">
-                </a>
-                """
-            
-            links_html += "</div>"
-            st.markdown(links_html, unsafe_allow_html=True)
+        
+        if 'website_link' in project:
+            links_html += f"""
+            <a href='{project['website_link']}' target='_blank' class='project-link'>
+                <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link' style="width: 36px; height: 36px;">
+            </a>
+            """
+        
+        links_html += "</div>"
+        st.markdown(links_html, unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
