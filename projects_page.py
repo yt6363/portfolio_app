@@ -133,7 +133,7 @@ def projects():
         # Add Website link if available
         if 'website_link' in project:
             st.markdown(
-                f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>",
+                f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'></a>",
                 unsafe_allow_html=True
             )
 
