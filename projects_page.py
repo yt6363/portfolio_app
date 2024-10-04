@@ -16,7 +16,7 @@ def projects():
             margin-bottom: 20px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: none;  /* No box shadow */
+            box-shadow: none;
         }
 
         /* Project title styling */
@@ -37,17 +37,21 @@ def projects():
             margin-bottom: 8px;
         }
 
-        /* Link icons styling */
+        /* Link icon styling */
         .link-icons {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 10px;
         }
 
+        .link-icons a {
+            text-decoration: none;
+        }
+
         .link-icons img {
-            width: 36px;
-            height: 36px;
+            width: 30px;
+            height: 30px;
         }
 
         /* Mobile-specific styling for compactness */
@@ -92,23 +96,6 @@ def projects():
                 "Crafted mathematical models for prioritization and ROI to steer strategic decisions."
             ],
             "github_link": "https://github.com/yt6363/V-Charging-Management-System"
-        },
-        {
-            "title": "Dripper Design and Manufacturing Project",
-            "description": [
-                "Excelled in project management, leading the design-to-manufacturing lifecycle of a high-quality dripper on time.",
-                "Demonstrated product management expertise by engineering a micro-irrigation dripper tailored to agricultural needs.",
-                "Employed Primavera P6 for superior project timeline coordination and task execution."
-            ]
-        },
-        {
-            "title": "Keurig Dr. Pepper's Alcoholic Beverage Project",
-            "description": [
-                "Oversaw Keurig Dr. Pepper's alcoholic beverage project, blending project and marketing management.",
-                "Conducted detailed market analysis, informing strategic direction and partnership selection.",
-                "Utilized Primavera P6 for meticulous project timeline management.",
-                "Crafted and deployed a marketing plan, aligning with consumer trends and business goals."
-            ]
         },
         {
             "title": "Personal Portfolio Web Application",
@@ -162,7 +149,7 @@ def projects():
         if 'website_link' in project:
             links_html += f"""
             <a href='{project['website_link']}' target='_blank' class='project-link'>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/6/6b/Internet_Web_Icon.png' alt='Website Link'>
+                <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'>
             </a>
             """
         
