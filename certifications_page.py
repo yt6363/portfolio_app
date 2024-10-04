@@ -87,7 +87,7 @@ def Certifications():
         st.markdown(
             f"""
             <div style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
-               <img src="{cert['logo']}" style="max-width: 60px; max-height: 60px; width: auto; height: auto;"/>
+                <img src="{cert['logo']}" style="max-width: 60px; max-height: 60px; width: auto; height: auto;"/>
                 <div>
                     <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
                     <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
