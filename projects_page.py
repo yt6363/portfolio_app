@@ -133,21 +133,24 @@ def projects():
 
         # Add GitHub and Website links if available
         if 'github_link' in project or 'website_link' in project:
-            st.markdown("<div class='links-container'>", unsafe_allow_html=True)
-
+            links_html = "<div class='links-container'>"
+            
             if 'github_link' in project:
-                st.markdown(
-                    f"<a href='{project['github_link']}' target='_blank' class='project-link'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>",
-                    unsafe_allow_html=True
-                )
+                links_html += f"""
+                <a href='{project['github_link']}' target='_blank' class='project-link'>
+                    <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'>
+                </a>
+                """
 
             if 'website_link' in project:
-                st.markdown(
-                    f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'></a>",
-                    unsafe_allow_html=True
-                )
+                links_html += f"""
+                <a href='{project['website_link']}' target='_blank' class='project-link'>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
+                </a>
+                """
 
-            st.markdown("</div>", unsafe_allow_html=True)
+            links_html += "</div>"
+            st.markdown(links_html, unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
