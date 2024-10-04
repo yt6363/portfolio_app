@@ -91,6 +91,53 @@ def projects():
             ],
             "github_link": "https://github.com/yt6363/portfolio_app",
             "website_link": "https://yashwanthtatineni.streamlit.app/"
+        },
+        {
+            "title": "Streamlit Web Application for Data Calculators",
+            "description": [
+                "Built an interactive data application using Streamlit.",
+                "Utilized Python for backend calculations.",
+                "Deployed the app on Streamlit Sharing, showcasing skills in deployment and continuous integration.",
+                "Developed models and calculators based on Gann and Astronomy Methodologies for financial and astronomical analysis.",
+                "Implemented features such as stock price calculators, planetary ingress date generators, and gravitational plotter.",
+                "Technologies used: Streamlit, Matplotlib, Plotly, SQL, Git/GitHub, and Vercel."
+            ],
+            "website_link": "https://1133633.streamlit.app/"
+        },
+        {
+            "title": "Health Insurance Company Database",
+            "description": [
+                "Developed a SQL database for health insurer record management, handling 300+ patient profiles.",
+                "Included demographics, physician, and insurance ID data for comprehensive record-keeping.",
+                "Enhanced targeted marketing capabilities through detailed patient information analysis."
+            ],
+            "github_link": "https://github.com/yt6363/Health-Insurance-Company-Database"
+        },
+        {
+            "title": "EV Charging Management System",
+            "description": [
+                "Developed priority-based scheduling algorithms to optimize electric vehicle charging and minimize wait times.",
+                "Pioneered the design of an SQL database for metadata analysis on electric vehicle catalogs and tariffs.",
+                "Crafted mathematical models for prioritization and ROI to steer strategic decisions."
+            ],
+            "github_link": "https://github.com/yt6363/V-Charging-Management-System"
+        },
+        {
+            "title": "Dripper Design and Manufacturing Project",
+            "description": [
+                "Excelled in project management, leading the design-to-manufacturing lifecycle of a high-quality dripper on time.",
+                "Demonstrated product management expertise by engineering a micro-irrigation dripper tailored to agricultural needs.",
+                "Employed Primavera P6 for superior project timeline coordination and task execution."
+            ]
+        },
+        {
+            "title": "Keurig Dr. Pepper's Alcoholic Beverage Project",
+            "description": [
+                "Oversaw Keurig Dr. Pepper's alcoholic beverage project, blending project and marketing management.",
+                "Conducted detailed market analysis, informing strategic direction and partnership selection.",
+                "Utilized Primavera P6 for meticulous project timeline management.",
+                "Crafted and deployed a marketing plan, aligning with consumer trends and business goals."
+            ]
         }
     ]
 
