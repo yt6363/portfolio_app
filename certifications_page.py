@@ -36,7 +36,7 @@ def Certifications():
             "issuer": "PMI",
             "issued_date": "Ongoing",
             "credential_id": "",
-            "logo": "https://w7.pngwing.com/pngs/308/703/png-transparent-pmi-hd-logo-thumbnail.png",
+            "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
