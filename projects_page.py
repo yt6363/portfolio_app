@@ -41,8 +41,8 @@ def projects():
         .link-icons {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
 
         .link-icons img {
@@ -103,32 +103,28 @@ def projects():
                 <ul class="project-list">
                     {''.join([f"<li>{item}</li>" for item in project['description']])}
                 </ul>
+            </div>
             """,
             unsafe_allow_html=True
         )
 
         # Add GitHub and Website links if available
-        if 'github_link' in project or 'website_link' in project:
-            links_html = "<div class='link-icons'>"
+        link_icons = []
+        if 'github_link' in project:
+            link_icons.append(
+                f"<a href='{project['github_link']}' target='_blank'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>"
+            )
+        
+        if 'website_link' in project:
+            link_icons.append(
+                f"<a href='{project['website_link']}' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>"
+            )
 
-            if 'github_link' in project:
-                links_html += f"""
-                <a href='{project['github_link']}' target='_blank'>
-                    <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'>
-                </a>
-                """
-            
-            if 'website_link' in project:
-                links_html += f"""
-                <a href='{project['website_link']}' target='_blank'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
-                </a>
-                """
-
-            links_html += "</div>"
-            st.markdown(links_html, unsafe_allow_html=True)
-
-        st.markdown("</div>", unsafe_allow_html=True)
+        if link_icons:
+            st.markdown(
+                f"<div class='link-icons'>{''.join(link_icons)}</div>",
+                unsafe_allow_html=True
+            )
 
 # Call the function to render the projects page
 if __name__ == "__main__":
