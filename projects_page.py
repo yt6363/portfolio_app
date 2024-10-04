@@ -37,19 +37,23 @@ def projects():
         }
 
         /* Link styling */
-        .project-link img {
-            width: 32px;  /* Increased size for better visibility */
-            height: 32px;
+        .project-link {
+            display: inline-block;
             margin-right: 10px;
+        }
+
+        .project-link img {
+            width: 36px;  /* Increased size for better visibility */
+            height: 36px;
             vertical-align: middle;
         }
 
         /* Align links horizontally */
         .links-container {
+            margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 15px;  /* Space between GitHub and Website logos */
-            margin-top: 10px;
+            gap: 15px;
         }
         </style>
     """, unsafe_allow_html=True)
