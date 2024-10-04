@@ -39,15 +39,15 @@ def projects():
 
         /* Link icon styling */
         .link-icons {
-            display: inline-block;
+            display: flex;
+            gap: 15px;
             margin-top: 10px;
         }
 
         .link-icons img {
             width: 30px;
             height: 30px;
-            margin-right: 10px;
-            vertical-align: middle;
+            cursor: pointer;
         }
 
         /* Mobile-specific styling for compactness */
@@ -68,6 +68,9 @@ def projects():
             }
             .project-list li {
                 margin-bottom: 5px;
+            }
+            .link-icons {
+                gap: 10px;
             }
         }
         </style>
