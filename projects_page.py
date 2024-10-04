@@ -116,7 +116,7 @@ def projects():
                 "Utilized custom CSS for styling to give a sleek and modern user experience."
             ],
             "github_link": "https://github.com/yt6363/portfolio_app",
-            "website_link": "https://yashwanthtatineni.streamlit.app/"
+            "website_link": "https://1133633.streamlit.app/"
         },
         {
             "title": "Streamlit Web Application for Data Calculators",
@@ -157,7 +157,7 @@ def projects():
         if 'website_link' in project:
             links_html += f"""
             <a href='{project['website_link']}' target='_blank' class='project-link'>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link' style="width: 36px; height: 36px;">
+                <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link' style="width: 36px; height: 36px;">
             </a>
             """
         
