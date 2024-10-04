@@ -149,7 +149,7 @@ def projects():
             if 'website_link' in project:
                 links_html += f"""
                 <a href='{project['website_link']}' target='_blank' class='project-link'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
+                    <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'>
                 </a>
                 """
 
