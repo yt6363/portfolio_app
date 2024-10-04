@@ -68,7 +68,7 @@ def experience():
                 </ul>
             """,
             "skills": ["Project Plans", "Multiple Projects"],
-            "logo": "https://e7.pngegg.com/pngimages/349/636/png-clipart-electricity-label-sticker-solar-power-transformer-text-label-thumbnail.png"
+            "logo": "https://img.freepik.com/premium-vector/high-voltage-electrical-transformer-icon_609277-5895.jpg?w=1800"
         },
         {
             "company": "Incredible India Projects Pvt Ltd.",
