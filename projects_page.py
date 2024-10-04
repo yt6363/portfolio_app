@@ -16,7 +16,6 @@ def projects():
             margin-bottom: 20px;
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: none;  /* No box shadow */
         }
 
         /* Project title styling */
@@ -38,31 +37,11 @@ def projects():
         }
 
         /* Link styling */
-        .project-links img {
+        .project-link img {
             width: 24px;
             height: 24px;
             margin-right: 10px;
-        }
-
-        /* Mobile-specific styling for compactness */
-        @media only screen and (max-width: 768px) {
-            .project-card {
-                padding: 8px;
-                margin-bottom: 15px;
-            }
-            .project-title {
-                font-size: 20px;
-                text-align: center;
-            }
-            .project-list {
-                font-size: 14px;
-                line-height: 1.4;
-                margin-left: 15px;
-                padding-left: 15px;
-            }
-            .project-list li {
-                margin-bottom: 5px;
-            }
+            vertical-align: middle;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -140,14 +119,25 @@ def projects():
                 <ul class="project-list">
                     {''.join([f"<li>{item}</li>" for item in project['description']])}
                 </ul>
-                <div class="project-links">
-                    {"<a href='" + project['github_link'] + "' target='_blank'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>" if 'github_link' in project else ""}
-                    {"<a href='" + project['website_link'] + "' target='_blank'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>" if 'website_link' in project else ""}
-                </div>
-            </div>
             """,
             unsafe_allow_html=True
         )
+
+        # Add GitHub link if available
+        if 'github_link' in project:
+            st.markdown(
+                f"<a href='{project['github_link']}' target='_blank' class='project-link'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>",
+                unsafe_allow_html=True
+            )
+
+        # Add Website link if available
+        if 'website_link' in project:
+            st.markdown(
+                f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'></a>",
+                unsafe_allow_html=True
+            )
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
 # Call the function to render the projects page
 if __name__ == "__main__":
