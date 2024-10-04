@@ -10,16 +10,15 @@ def experience():
     )
     # List of experience entries
     experience_entries = [
-        {
+       {
             "company": "Penn State Harrisburg",
             "role": [
-                {"title": "Graduate Wage Assistant", "duration": "Oct 2023 - Present", "details": "Part-time | On-site"}
+                {"title": "Teaching Assistant", "duration": "Jan 2023 - Oct 2023", "details": ""}
             ],
             "description": """
                 <ul>
-                    <li>Assist faculty in special projects</li>
-                    <li>Laboratory instruction</li>
-                    <li>Grading assignments for 140 undergraduate students</li>
+                    <li>Spearheaded a streamlined grading process to enhance consistency and reduce turnaround time, demonstrating process management skills and contributing to overall course quality.</li>
+                    <li>Provided one-on-one support to students by clearing doubts in Basic Electric Course and assisting in PHY 211 and 212 Labs, enhancing their understanding and performance.</li>
                 </ul>
             """,
             "location": "📍 Pennsylvania, United States",
@@ -40,15 +39,15 @@ def experience():
             "skills": ["Power Electronics Design", "Product Management"],
             "logo": "https://media.licdn.com/dms/image/v2/D560BAQEoT1DsKihRxQ/company-logo_100_100/company-logo_100_100/0/1725596070207/bharat_electronics_limited_logo?e=1735776000&v=beta&t=j77_3BJFaVrjoJ-eUh96puYmDlvvMnwvEyw-gisX1SI"
         },
-        {
+              {
             "company": "Penn State Harrisburg",
             "role": [
-                {"title": "Teaching Assistant", "duration": "Jan 2023 - Oct 2023", "details": ""}
+                {"title": "Graduate Wage Assistant", "duration": "Oct 2023 - May 2025", "details": "Part-time | On-site"}
             ],
             "description": """
                 <ul>
-                    <li>Assisted students in Digital Design, Electrical Communication course and developed course modules.</li>
-                    <li>Led hands-on sessions and expedited grading for junior engineers in Control Systems and Electromagnetism, enhancing learning and practical skills.</li>
+                    <li>Led the scheduling, grading, and progress tracking for laboratory sessions, ensuring smooth operation and effective communication among stakeholders.</li>
+                    <li>Collaborated on Laboratory Curriculum Optimization, which involved developing new modules and assessment methods, improving efficiency and engagement for over 140 undergraduate students.</li>
                 </ul>
             """,
             "location": "📍 Pennsylvania, United States",
