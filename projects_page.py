@@ -40,6 +40,7 @@ def projects():
         /* Link icon styling */
         .link-icons {
             display: flex;
+            align-items: center;
             gap: 15px;
             margin-top: 10px;
         }
