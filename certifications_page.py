@@ -61,7 +61,7 @@ def Certifications():
             "issued_date": "Sep 2024",
             "credential_id": "53395239",
             "logo": "https://media.licdn.com/dms/image/v2/C560BAQF0C3CTnjBm2w/company-logo_100_100/company-logo_100_100/0/1631314320914?e=1735776000&v=beta&t=isQEPoGFfLziemjS95OI2F0ZyLtHfbaBo9kHRZYIBhg",
-            "logo_style": "max-width: 55px; max-height: 55px; width: auto; height: auto;"
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
             "title": "Advertising on LinkedIn",
@@ -69,7 +69,7 @@ def Certifications():
             "issued_date": "May 2024",
             "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-            "logo_style": "max-width: 55px; max-height: 55px; width: auto; height: auto;"
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
             "title": "How to Generate Marketing Leads with AI",
