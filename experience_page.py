@@ -82,7 +82,7 @@ def experience():
                 </ul>
             """,
             "skills": ["Quality Management", "Microsoft Excel"],
-            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
+            "logo": "https://e7.pngegg.com/pngimages/349/636/png-clipart-electricity-label-sticker-solar-power-transformer-text-label-thumbnail.png"
         }
     ]
 
