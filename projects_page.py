@@ -38,10 +38,18 @@ def projects():
 
         /* Link styling */
         .project-link img {
-            width: 32px;  /* Increased size from 24px to 32px */
-            height: 32px;  /* Increased size from 24px to 32px */
+            width: 32px;  /* Increased size for visibility */
+            height: 32px;
             margin-right: 10px;
             vertical-align: middle;
+        }
+
+        /* Align links horizontally */
+        .links-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
         }
         </style>
     """, unsafe_allow_html=True)
@@ -123,19 +131,23 @@ def projects():
             unsafe_allow_html=True
         )
 
-        # Add GitHub link if available
-        if 'github_link' in project:
-            st.markdown(
-                f"<a href='{project['github_link']}' target='_blank' class='project-link'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>",
-                unsafe_allow_html=True
-            )
+        # Add GitHub and Website links if available
+        if 'github_link' in project or 'website_link' in project:
+            st.markdown("<div class='links-container'>", unsafe_allow_html=True)
 
-        # Add Website link if available
-        if 'website_link' in project:
-            st.markdown(
-                f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'></a>",
-                unsafe_allow_html=True
-            )
+            if 'github_link' in project:
+                st.markdown(
+                    f"<a href='{project['github_link']}' target='_blank' class='project-link'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'></a>",
+                    unsafe_allow_html=True
+                )
+
+            if 'website_link' in project:
+                st.markdown(
+                    f"<a href='{project['website_link']}' target='_blank' class='project-link'><img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link'></a>",
+                    unsafe_allow_html=True
+                )
+
+            st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
