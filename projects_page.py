@@ -41,8 +41,13 @@ def projects():
         .link-icons {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 10px;
+        }
+
+        .link-icons img {
+            width: 36px;
+            height: 36px;
         }
 
         /* Mobile-specific styling for compactness */
@@ -116,7 +121,7 @@ def projects():
                 "Utilized custom CSS for styling to give a sleek and modern user experience."
             ],
             "github_link": "https://github.com/yt6363/portfolio_app",
-            "website_link": "https://1133633.streamlit.app/",
+            "website_link": "https://yashwanthtatineni.streamlit.app/"
         },
         {
             "title": "Streamlit Web Application for Data Calculators",
@@ -150,14 +155,14 @@ def projects():
         if 'github_link' in project:
             links_html += f"""
             <a href='{project['github_link']}' target='_blank' class='project-link'>
-                <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link' style="width: 36px; height: 36px;">
+                <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' alt='GitHub Link'>
             </a>
             """
         
         if 'website_link' in project:
             links_html += f"""
             <a href='{project['website_link']}' target='_blank' class='project-link'>
-                <img src='https://e7.pngegg.com/pngimages/722/126/png-clipart-web-development-computer-icons-world-wide-web-logo-symmetry.png' alt='Website Link' style="width: 36px; height: 36px;">
+                <img src='https://upload.wikimedia.org/wikipedia/commons/d/db/Internet-web-browser.svg' alt='Website Link'>
             </a>
             """
         
