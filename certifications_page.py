@@ -72,9 +72,17 @@ def Certifications():
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
-            "title": "How to Generate Marketing Leads with AI",
+            "title": "Learning Confluence on LinkedIn",
             "issuer": "LinkedIn",
-            "issued_date": "May 2024",
+            "issued_date": "Oct 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Managing Jira Projects: 1 Introduction",
+            "issuer": "LinkedIn",
+            "issued_date": "Oct 2024",
             "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
