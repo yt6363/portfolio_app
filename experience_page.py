@@ -27,7 +27,7 @@ def experience():
         },
         {
             "company": "Bharat Electronics Limited",
-            "role": [{"title": "Overview Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
+            "role": [{"title": "Project Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
             "location": "📍 Bengaluru, Karnataka, India",
             "description": """
                 <ul>
@@ -72,7 +72,7 @@ def experience():
         },
         {
             "company": "Incredible India Projects Pvt Ltd.",
-            "role": [{"title": "Marketing Operations Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
+            "role": [{"title": " Assistant Project Coordinator Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
             "location": "📍 Hyderabad, Telangana, India",
             "description": """
                 <ul>
