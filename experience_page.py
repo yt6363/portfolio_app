@@ -72,7 +72,7 @@ def experience():
         },
         {
             "company": "Incredible India Projects Pvt Ltd.",
-            "role": [{"title": " Assistant Project Coordinator Intern", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
+            "role": [{"title": " Assistant Project Coordinator ", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
             "location": "📍 Hyderabad, Telangana, India",
             "description": """
                 <ul>
