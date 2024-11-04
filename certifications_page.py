@@ -34,8 +34,8 @@ def Certifications():
         {
             "title": "PMI CAPM (Certified Associate in Project Management)",
             "issuer": "PMI",
-            "issued_date": "Ongoing",
-            "credential_id": "",
+            "issued_date": "11/02/2024",
+            "credential_id": "3969140",
             "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
