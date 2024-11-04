@@ -91,7 +91,7 @@ def Certifications():
             "title": "Foundations of Project Management",
             "issuer": "Google",
             "issued_date": "Sep 2023",
-            "credential_id": "https://www.coursera.org/account/accomplishments/verify/8SS264YYP53U",
+            "credential_id": "",
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_100_100/company-logo_100_100/0/1631311446380?e=1735776000&v=beta&t=yz54uBYDvTRXVCn3_vT_hG_eEHd-DjkvtVTpzZOZuFE",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         }
