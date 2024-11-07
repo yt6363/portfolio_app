@@ -42,8 +42,8 @@ def Certifications():
         {
             "title": "AIGPE Six Sigma: Lean Six Sigma Green Belt Certification (Accredited)",
             "issuer": "AIGPE",
-            "issued_date": "Ongoing",
-            "credential_id": "",
+            "issued_date": "11/07/2024",
+            "credential_id": "ZSSGB121154025",
             "logo": "https://gaqm.org/uploads/cert_logos/logo_5442.png",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
