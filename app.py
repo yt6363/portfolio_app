@@ -175,9 +175,6 @@ if selected_page == "about":
             <a href="https://github.com/yt6363" target="_blank">
                 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
             </a>
-            <a href="https://x.com/Yashneni" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/X_logo_2023_original.svg/600px-X_logo_2023_original.svg.png?20230728155658" alt="Upwork">
-            </a>
         </div>
     """, unsafe_allow_html=True)
 
