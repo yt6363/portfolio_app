@@ -169,14 +169,14 @@ if selected_page == "about":
     add_profile_image("Yashwanth sai Tatineni.jpeg", width=250)
     st.markdown("""
         <div style="text-align: center; margin-top: 20px;">
-            <a href="https://www.linkedin.com/in/yashwanth-sai-tatineni-80b4ab1b7/" target="_blank">
+            <a href="https://www.linkedin.com/in/yashwanthsaitatineni/" target="_blank">
                 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
             </a>
             <a href="https://github.com/yt6363" target="_blank">
                 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
             </a>
-            <a href="https://www.upwork.com/freelancers/~Yashwanth" target="_blank">
-                <img src="https://img.shields.io/badge/Upwork-6fda44?style=for-the-badge&logo=upwork&logoColor=white" alt="Upwork">
+            <a href="https://x.com/Yashneni" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/X_logo_2023_original.svg/600px-X_logo_2023_original.svg.png?20230728155658" alt="Upwork">
             </a>
         </div>
     """, unsafe_allow_html=True)
