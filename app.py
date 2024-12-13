@@ -102,7 +102,7 @@ st.markdown("""
 
 # Top Navigation Bar
 selected_page = st.query_params.get('page', ['about'])[0]
-
+st.write(f"Selected Page: {selected_page}")
 st.markdown("""
     <div class="topnav">
         <a href="?page=about" target="_self" class="{active_about}">About Me</a>
