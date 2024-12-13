@@ -21,14 +21,14 @@ def experience():
                     <li>Provided one-on-one support to students by clearing doubts in Basic Electric Course and assisting in PHY 211 and 212 Labs, enhancing their understanding and performance.</li>
                 </ul>
             """,
-            "location": "\ud83d\udccd Pennsylvania, United States",
+            "location": "📍 Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
         {
             "company": "Bharat Electronics Limited",
             "role": [{"title": "Project Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
-            "location": "\ud83d\udccd Bengaluru, Karnataka, India",
+            "location": "📍 Bengaluru, Karnataka, India",
             "description": """
                 <ul>
                     <li>Worked in a government-owned organization specializing in avionics and electronic warfare.</li>
@@ -42,7 +42,7 @@ def experience():
         {
             "company": "New Tech Transformers Pvt Ltd.",
             "role": [{"title": "Quality and Project Management Intern", "duration": "May 2021 - Aug 2021", "details": "Hybrid"}],
-            "location": "\ud83d\udccd Kanpur, Uttar Pradesh, India",
+            "location": "📍 Kanpur, Uttar Pradesh, India",
             "description": """
                 <ul>
                     <li>Assisted in quality assurance for transformer manufacturing, ensuring ISO 9001 compliance.</li>
@@ -57,7 +57,7 @@ def experience():
         {
             "company": "Incredible India Projects Pvt Ltd.",
             "role": [{"title": "Assistant Project Manager", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
-            "location": "\ud83d\udccd Hyderabad, Telangana, India",
+            "location": "📍 Hyderabad, Telangana, India",
             "description": """
                 <ul>
                     <li>Develop standards and processes for marketing operations, including 15 templates and workflows.</li>
