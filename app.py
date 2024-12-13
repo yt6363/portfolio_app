@@ -1,4 +1,3 @@
-
 import streamlit as st
 from resume_page import resume
 from experience_page import experience
@@ -15,7 +14,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for general app styling and top navigation bar styling
+# Custom CSS for general app styling and to hide the warning message
 st.markdown("""
     <style>
     /* General reset */
@@ -97,11 +96,16 @@ st.markdown("""
             padding: 10px 20px;
         }
     }
+
+    /* Hide Streamlit's warning messages */
+    .stAlert {
+        display: none;
+    }
     </style>
 """, unsafe_allow_html=True)
 
 # Top Navigation Bar
-selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
+selected_page = st.query_params.get('page', ['about'])[0]  # Updated from experimental_get_query_params
 
 st.markdown("""
     <div class="topnav">
