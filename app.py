@@ -101,7 +101,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Top Navigation Bar
-selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
+selected_page = st.query_params.get('page', ['about'])[0]  # Updated from experimental_get_query_params
+
 st.markdown("""
     <div class="topnav">
         <a href="?page=about" target="_self" class="{active_about}">About Me</a>
@@ -119,6 +120,7 @@ st.markdown("""
     active_certifications='active' if selected_page == 'Certifications' else '',
     active_contact='active' if selected_page == 'contact' else ''
 ), unsafe_allow_html=True)
+
 
 # Function to create circular images with custom CSS styling
 def add_profile_image(image_path, width):
