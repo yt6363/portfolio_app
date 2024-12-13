@@ -105,7 +105,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Top Navigation Bar
-selected_page = st.query_params.get('page', ['about'])[0]  # Updated from experimental_get_query_params
+selected_page = st.experimental_get_query_params().get('page', ['about'])[0]
 
 st.markdown("""
     <div class="topnav">
