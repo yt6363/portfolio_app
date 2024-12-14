@@ -4,7 +4,7 @@ from PIL import Image
 def experience():
     # Header for the experience section
     st.markdown(
-        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'></h1>",
+        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Experience</h1>",
         unsafe_allow_html=True
     )
 
@@ -22,14 +22,14 @@ def experience():
                     <li>Managed an iterative curriculum development project, gathering feedback from over 150 stakeholders (students and faculty) and refining course modules, resulting in a 25% increase in overall engagement.</li>
                 </ul>
             """,
-            "location": "\ud83d\udccd Pennsylvania, United States",
+            "location": "Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
         {
             "company": "Incredible India Projects Pvt Ltd.",
             "role": [{"title": "Assistant Project Manager", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
-            "location": "\ud83d\udccd Hyderabad, Telangana, India",
+            "location": "Hyderabad, Telangana, India",
             "description": """
                 <ul>
                     <li>Managed resource scheduling for 10 projects valued over $33M+ as evidenced by on-time project completions by assisting project managers with risk logs, project status updates, and resource allocation.</li>
@@ -43,7 +43,7 @@ def experience():
         {
             "company": "Bharat Electronics Limited",
             "role": [{"title": "Project Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
-            "location": "\ud83d\udccd Bengaluru, Karnataka, India",
+            "location": "Bengaluru, Karnataka, India",
             "description": """
                 <ul>
                     <li>Ensured project compliance with industry standards as measured by successful audits by reviewing and coordinating avionics and electronic warfare projects as an overview engineer.</li>
@@ -57,7 +57,7 @@ def experience():
         {
             "company": "New Tech Transformers Pvt Ltd.",
             "role": [{"title": "Quality and Project Management Intern", "duration": "May 2021 - Aug 2021", "details": "Hybrid"}],
-            "location": "\ud83d\udccd Kanpur, Uttar Pradesh, India",
+            "location": "Kanpur, Uttar Pradesh, India",
             "description": """
                 <ul>
                     <li>Achieved ISO 9001 and ISO 18095:2018 compliance through external audits by assisting in quality assurance for transformer manufacturing, decreased defects by 30% through root cause analysis and corrective actions.</li>
@@ -87,7 +87,7 @@ def experience():
                         </div>
                     </div>
                     <h5 style="color: #333; margin: 10px 0;">{exp['role'][0]['title']}</h5>
-                    <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']} {" | " + details if details else ""}</p>
+                    <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']}{' | ' + details if details else ''}</p>
                     <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>
                     <div style="margin-top: 10px;">
                         {" ".join([f"<span style='background-color: #e0e0e0; color: #333; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; display: inline-block;'>{skill}</span>" for skill in exp['skills']])}
