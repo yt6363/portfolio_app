@@ -25,11 +25,11 @@ def Certifications():
 
     # Page header
     st.markdown(
-        f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'>Certifications</h1>",
+        f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'></h1>",
         unsafe_allow_html=True
     )
 
-    # List of certification entries, including ongoing certifications
+   # List of certification entries, including ongoing certifications
     certifications_list = [
         {
             "title": "PMI CAPM (Certified Associate in Project Management)",
@@ -81,13 +81,49 @@ def Certifications():
             "issued_date": "Nov 2024",
             "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
-        },
+        }, 
         {
             "title": "Microsoft Project: MS Project 2021 2019 2016 Complete - 8 PDUs",
             "issuer": "Udemy",
             "issued_date": "Sep 2024",
             "credential_id": "UC-6abec0b7-e1d4-4999-ae95-12d093a0fe76",
             "logo": "https://media.licdn.com/dms/image/v2/D560BAQEf_NHzN2yVQg/company-logo_100_100/company-logo_100_100/0/1723593046388/udemy_logo?e=1735776000&v=beta&t=d4ikIqG_1JZKDor84v02-Hzs4nwufAlMH4Bl7toaalk",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Responsible Conduct of Research (RCR) - Basic",
+            "issuer": "CITI Program",
+            "issued_date": "Sep 2024",
+            "credential_id": "53395239",
+            "logo": "https://media.licdn.com/dms/image/v2/C560BAQF0C3CTnjBm2w/company-logo_100_100/company-logo_100_100/0/1631314320914?e=1735776000&v=beta&t=isQEPoGFfLziemjS95OI2F0ZyLtHfbaBo9kHRZYIBhg",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Advertising on LinkedIn",
+            "issuer": "LinkedIn",
+            "issued_date": "May 2024",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Learning Confluence on LinkedIn",
+            "issuer": "LinkedIn",
+            "issued_date": "Oct 2024",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Managing Jira Projects: 1 Introduction",
+            "issuer": "LinkedIn",
+            "issued_date": "Oct 2024",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "Foundations of Project Management",
+            "issuer": "Google",
+            "issued_date": "Sep 2023",
+            "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_100_100/company-logo_100_100/0/1631311446380?e=1735776000&v=beta&t=yz54uBYDvTRXVCn3_vT_hG_eEHd-DjkvtVTpzZOZuFE",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         }
     ]
@@ -101,7 +137,7 @@ def Certifications():
                 <div>
                     <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
                     <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if cert.get('credential_id') else ""}
+                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
                 </div>
             </div>
             """,
