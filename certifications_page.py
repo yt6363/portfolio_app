@@ -25,7 +25,7 @@ def Certifications():
 
     # Page header
     st.markdown(
-        f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'></h1>",
+        f"<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px; font-size: {st.session_state['text_size'] + 10}px;'>Certifications</h1>",
         unsafe_allow_html=True
     )
 
@@ -45,6 +45,46 @@ def Certifications():
             "issued_date": "11/07/2024",
             "credential_id": "ZSSGB121154025",
             "logo": "https://gaqm.org/uploads/cert_logos/logo_5442.png",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "AWS Flash - Introduction to Cost Management for SaaS",
+            "issuer": "Amazon Web Services (AWS)",
+            "issued_date": "Nov 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "AWS Flash - SaaS Business Fundamentals",
+            "issuer": "Amazon Web Services (AWS)",
+            "issued_date": "Nov 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "PMI Talking to AI: Prompt Engineering for Project Managers",
+            "issuer": "Project Management Institute",
+            "issued_date": "Nov 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "PMI: Data Landscape of GenAI for Project Managers",
+            "issuer": "Project Management Institute",
+            "issued_date": "Nov 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
+            "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
+        },
+        {
+            "title": "PMI: Generative AI Overview for Project Managers",
+            "issuer": "Project Management Institute",
+            "issued_date": "Nov 2024",
+            "credential_id": "",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
@@ -106,7 +146,7 @@ def Certifications():
                 <div>
                     <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
                     <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if 'credential_id' in cert else ""}
+                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if cert['credential_id'] else ""}
                 </div>
             </div>
             """,
