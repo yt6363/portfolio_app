@@ -4,36 +4,51 @@ from PIL import Image
 def experience():
     # Header for the experience section
     st.markdown(
-        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'>Experience</h1>",
+        "<h1 style='text-align: center; color: #2b6cb0; padding-bottom: 20px;'></h1>",
         unsafe_allow_html=True
     )
 
     # List of experience entries
     experience_entries = [
         {
-            "company": "Penn State Harrisburg",
+            "company": "Pennsylvania State University",
             "role": [
-                {"title": "Teaching Assistant", "duration": "Jan 2023 - Present", "details": ""}
+                {"title": "Graduate Wage Associate & Teaching Assistant", "duration": "Jan 2023 - Present", "details": ""}
             ],
             "description": """
                 <ul>
-                    <li>Spearheaded a streamlined grading process to enhance consistency and reduce turnaround time, demonstrating process management skills and contributing to overall course quality.</li>
-                    <li>Provided one-on-one support to students by clearing doubts in Basic Electric Course and assisting in PHY 211 and 212 Labs, enhancing their understanding and performance.</li>
+                    <li>Conducted a comprehensive feasibility analysis of a potential Dr Pepper product line expansion into distilleries, wineries, and RTD beverages, using market research and financial modeling to validate product-market fit, projected a 15% increase in annual revenue.</li>
+                    <li>Optimized grading processes by implementing an automated data upload solution, cutting turnaround time by 50% and ensuring timely delivery of submission milestones.</li>
+                    <li>Managed an iterative curriculum development project, gathering feedback from over 150 stakeholders (students and faculty) and refining course modules, resulting in a 25% increase in overall engagement.</li>
                 </ul>
             """,
-            "location": "📍 Pennsylvania, United States",
+            "location": "\ud83d\udccd Pennsylvania, United States",
             "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
         {
-            "company": "Bharat Electronics Limited",
-            "role": [{"title": "Project Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
-            "location": "📍 Bengaluru, Karnataka, India",
+            "company": "Incredible India Projects Pvt Ltd.",
+            "role": [{"title": "Assistant Project Manager", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
+            "location": "\ud83d\udccd Hyderabad, Telangana, India",
             "description": """
                 <ul>
-                    <li>Worked in a government-owned organization specializing in avionics and electronic warfare.</li>
-                    <li>Took responsibility for product management, focusing on the product life cycle of RWR (Radio warning receiver).</li>
-                    <li>Performed quality testing and operated THV (temperature, humidity, and vibration) chamber.</li>
+                    <li>Managed resource scheduling for 10 projects valued over $33M+ as evidenced by on-time project completions by assisting project managers with risk logs, project status updates, and resource allocation.</li>
+                    <li>Improved customer relationship management data accuracy by 20% as measured by reduced data errors by managing and updating over 500 client records.</li>
+                    <li>Boosted team efficiency by 30% as measured by internal performance metrics by creating 15 workflow templates.</li>
+                </ul>
+            """,
+            "skills": ["Quality Management", "Microsoft Excel"],
+            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
+        },
+        {
+            "company": "Bharat Electronics Limited",
+            "role": [{"title": "Project Intern", "duration": "Apr 2022 - May 2022", "details": "On-site"}],
+            "location": "\ud83d\udccd Bengaluru, Karnataka, India",
+            "description": """
+                <ul>
+                    <li>Ensured project compliance with industry standards as measured by successful audits by reviewing and coordinating avionics and electronic warfare projects as an overview engineer.</li>
+                    <li>Increased RWR (Radar Warning Receivers) reliability by 15% as indicated by performance data by guiding product management and implementing life cycle extensions.</li>
+                    <li>Achieved 100% product compliance and durability as confirmed by passing all quality tests by performing quality testing on Temperature, Humidity, and Vibration (THV) chamber.</li>
                 </ul>
             """,
             "skills": ["Power Electronics Design", "Product Management"],
@@ -42,31 +57,16 @@ def experience():
         {
             "company": "New Tech Transformers Pvt Ltd.",
             "role": [{"title": "Quality and Project Management Intern", "duration": "May 2021 - Aug 2021", "details": "Hybrid"}],
-            "location": "📍 Kanpur, Uttar Pradesh, India",
+            "location": "\ud83d\udccd Kanpur, Uttar Pradesh, India",
             "description": """
                 <ul>
-                    <li>Assisted in quality assurance for transformer manufacturing, ensuring ISO 9001 compliance.</li>
-                    <li>Supported project management activities: timeline management, resource allocation, and risk assessment.</li>
-                    <li>Conducted root cause analysis and implemented corrective actions to enhance product quality.</li>
-                    <li>Utilized Microsoft Project and Primavera P6 for project tracking & reporting.</li>
+                    <li>Achieved ISO 9001 and ISO 18095:2018 compliance through external audits by assisting in quality assurance for transformer manufacturing, decreased defects by 30% through root cause analysis and corrective actions.</li>
+                    <li>Reduced project time by 20% by streamlining schedules, resources, and risk management.</li>
+                    <li>Improved tracking accuracy by 25% using Microsoft Project and Primavera P6 for reporting.</li>
                 </ul>
             """,
             "skills": ["Project Plans", "Multiple Projects"],
             "logo": "https://img.freepik.com/premium-vector/high-voltage-electrical-transformer-icon_609277-5895.jpg?w=1800"
-        },
-        {
-            "company": "Incredible India Projects Pvt Ltd.",
-            "role": [{"title": "Assistant Project Manager", "duration": "May 2022 - Dec 2022", "details": "Hybrid"}],
-            "location": "📍 Hyderabad, Telangana, India",
-            "description": """
-                <ul>
-                    <li>Develop standards and processes for marketing operations, including 15 templates and workflows.</li>
-                    <li>Assist project managers with risk logs, project status, and resource scheduling for 10 projects and a team of 25.</li>
-                    <li>Manage and update the CRM with 500+ client records with their property listings.</li>
-                </ul>
-            """,
-            "skills": ["Quality Management", "Microsoft Excel"],
-            "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
         }
     ]
 
