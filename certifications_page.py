@@ -137,7 +137,7 @@ def Certifications():
                 <div>
                     <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
                     <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                    f"<p style='font-size: {st.session_state['text_size'] - 2}px; color: #6c757d; margin: 0;'>Credential ID: {cert['credential_id']}</p>" if cert.get('credential_id') else ""
+                    f"<p style='font-size: {st.session_state['text_size'] - 2}px; color: #6c757d; margin: 0;'>Credential ID: {cert['credential_id']}</p>" if 'credential_id' in cert and cert['credential_id'] else ""
                 </div>
             </div>
             """,
