@@ -84,8 +84,7 @@ def experience():
                     </div>
                     <h5 style="color: #333; margin: 10px 0;">{exp['role'][0]['title']}</h5>
                     <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']}{' | ' + details if details else ''}</p>
-                    <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>
-                </div>
+                    <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>\n                </div>
                 """,
                 unsafe_allow_html=True
             )
