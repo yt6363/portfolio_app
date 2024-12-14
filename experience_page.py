@@ -23,7 +23,6 @@ def experience():
                 </ul>
             """,
             "location": "Pennsylvania, United States",
-            "skills": ["Project Plans", "Professional Skills", "Leadership"],
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFUE0Km4XXSBQ/company-logo_100_100/company-logo_100_100/0/1631332415612?e=1735776000&v=beta&t=R4qboXMy84-qxVFO3cD7Uo1xnfXI_3p9fuHaTDAmLmQ"
         },
         {
@@ -37,7 +36,6 @@ def experience():
                     <li>Boosted team efficiency by 30% as measured by internal performance metrics by creating 15 workflow templates.</li>
                 </ul>
             """,
-            "skills": ["Quality Management", "Microsoft Excel"],
             "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGpTI5Hv69-RQ/company-logo_100_100/company-logo_100_100/0/1631315747746?e=1735776000&v=beta&t=ye059Rt3avH1IxHGOpazL9yi0ak68CUMU0Vz3i3hrVY"
         },
         {
@@ -51,7 +49,6 @@ def experience():
                     <li>Achieved 100% product compliance and durability as confirmed by passing all quality tests by performing quality testing on Temperature, Humidity, and Vibration (THV) chamber.</li>
                 </ul>
             """,
-            "skills": ["Power Electronics Design", "Product Management"],
             "logo": "https://media.licdn.com/dms/image/v2/D560BAQEoT1DsKihRxQ/company-logo_100_100/company-logo_100_100/0/1725596070207/bharat_electronics_limited_logo?e=1735776000&v=beta&t=j77_3BJFaVrjoJ-eUh96puYmDlvvMnwvEyw-gisX1SI"
         },
         {
@@ -65,7 +62,6 @@ def experience():
                     <li>Improved tracking accuracy by 25% using Microsoft Project and Primavera P6 for reporting.</li>
                 </ul>
             """,
-            "skills": ["Project Plans", "Multiple Projects"],
             "logo": "https://img.freepik.com/premium-vector/high-voltage-electrical-transformer-icon_609277-5895.jpg?w=1800"
         }
     ]
