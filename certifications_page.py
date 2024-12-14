@@ -51,7 +51,6 @@ def Certifications():
             "title": "AWS Flash - Introduction to Cost Management for SaaS",
             "issuer": "Amazon Web Services (AWS)",
             "issued_date": "Nov 2024",
-            "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
@@ -59,32 +58,28 @@ def Certifications():
             "title": "AWS Flash - SaaS Business Fundamentals",
             "issuer": "Amazon Web Services (AWS)",
             "issued_date": "Nov 2024",
-            "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
             "title": "PMI Talking to AI: Prompt Engineering for Project Managers",
-            "issuer": "Project Management Institute",
+            "issuer": "PMI",
             "issued_date": "Nov 2024",
-            "credential_id": "",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
+            "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
             "title": "PMI: Data Landscape of GenAI for Project Managers",
-            "issuer": "Project Management Institute",
+            "issuer": "PMI",
             "issued_date": "Nov 2024",
-            "credential_id": "",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
+            "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
             "title": "PMI: Generative AI Overview for Project Managers",
-            "issuer": "Project Management Institute",
+            "issuer": "PMI",
             "issued_date": "Nov 2024",
-            "credential_id": "",
-            "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7e/PMI_logo.svg",
+            "logo": "https://ccrs.pmi.org/image/providerlogo/1000000003",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
         {
@@ -107,7 +102,6 @@ def Certifications():
             "title": "Advertising on LinkedIn",
             "issuer": "LinkedIn",
             "issued_date": "May 2024",
-            "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
@@ -115,7 +109,6 @@ def Certifications():
             "title": "Learning Confluence on LinkedIn",
             "issuer": "LinkedIn",
             "issued_date": "Oct 2024",
-            "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
@@ -123,7 +116,6 @@ def Certifications():
             "title": "Managing Jira Projects: 1 Introduction",
             "issuer": "LinkedIn",
             "issued_date": "Oct 2024",
-            "credential_id": "",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         },
@@ -131,7 +123,6 @@ def Certifications():
             "title": "Foundations of Project Management",
             "issuer": "Google",
             "issued_date": "Sep 2023",
-            "credential_id": "",
             "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_100_100/company-logo_100_100/0/1631311446380?e=1735776000&v=beta&t=yz54uBYDvTRXVCn3_vT_hG_eEHd-DjkvtVTpzZOZuFE",
             "logo_style": "max-width: 95px; max-height: 95px; width: auto; height: auto;"
         }
@@ -146,7 +137,7 @@ def Certifications():
                 <div>
                     <h3 style="color: #2b6cb0; font-size: {st.session_state['text_size'] + 2}px;">{cert['title']}</h3>
                     <p style="font-size: {st.session_state['text_size']}px; color: #6c757d; margin: 0;">{cert['issuer']} - Issued {cert['issued_date']}</p>
-                    {"<p style='font-size: " + str(st.session_state['text_size'] - 2) + "px; color: #6c757d; margin: 0;'>Credential ID: " + cert['credential_id'] + "</p>" if cert['credential_id'] else ""}
+                    {f"<p style='font-size: {st.session_state['text_size'] - 2}px; color: #6c757d; margin: 0;'>Credential ID: {cert['credential_id']}</p>" if cert.get('credential_id') else ""}
                 </div>
             </div>
             """,
