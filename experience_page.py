@@ -85,9 +85,6 @@ def experience():
                     <h5 style="color: #333; margin: 10px 0;">{exp['role'][0]['title']}</h5>
                     <p style="font-size: 13px; color: #6c757d;">{exp['role'][0]['duration']}{' | ' + details if details else ''}</p>
                     <div style="font-size: 13px; color: #4a5568; margin-top: 10px;">{exp['description']}</div>
-                    <div style="margin-top: 10px;">
-                        {" ".join([f"<span style='background-color: #e0e0e0; color: #333; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin-right: 5px; margin-bottom: 5px; display: inline-block;'>{skill}</span>" for skill in exp['skills']])}
-                    </div>
                 </div>
                 """,
                 unsafe_allow_html=True
