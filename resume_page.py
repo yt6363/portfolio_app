@@ -8,7 +8,7 @@ def resume():
     st.write("Here's a quick overview of my educational and professional background.")
 
     # Path to the local resume file
-    resume_path = "T yashwanth sai_Resume.pdf"
+    resume_path = "T yashwanth sai_Resume2.pdf"
 
     # Check if the file exists
     if os.path.exists(resume_path):
@@ -17,7 +17,7 @@ def resume():
             st.download_button(
                 label="Download Resume",
                 data=pdf_file,
-                file_name="T yashwanth sai_Resume.pdf",
+                file_name="T yashwanth sai_Resume2.pdf",
                 mime="application/pdf"
             )
 
